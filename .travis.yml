@@ -7,7 +7,7 @@ branches:
 cache:
   directiories:
     - node_modules
-services:
-  - mysql
-before install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS lmsDB;'
+# services:
+#   - mysql
+# before install:
+#   - mysql -e 'CREATE DATABASE IF NOT EXISTS lmsDB;'
