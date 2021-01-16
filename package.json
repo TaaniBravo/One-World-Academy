@@ -4,8 +4,10 @@
   "description": "This is for Project 2 for UW Coding Bootcamp.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
     "watch": "nodemon server.js"
   },
   "repository": {
@@ -30,6 +32,14 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^1.13.7"
   }
 }
