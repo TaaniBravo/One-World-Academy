@@ -44,6 +44,7 @@ SO THAT I can acheive my educatonal aspirations.
 - Views | Handlebars
 - Public | CSS | JS
 - Presentation
+- Readme
 
 ## Back End
 - Routes | Config [Taani]
@@ -51,3 +52,7 @@ SO THAT I can acheive my educatonal aspirations.
 - Login System [Taani]
 - CMS Creation [Taani]
 - Quiz API [Taani/Yuwen/Abdul]
+
+## Resource Links
+- Quiz: https://quizapi.io/
+- 
