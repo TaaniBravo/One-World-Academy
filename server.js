@@ -19,7 +19,6 @@ app.use(passport.session());
 
 const apiRoutes = require("./routes/apiRoutes")(app);
 const htmlRoutes = require("./routes/htmlRoutes")(app);
-const authRoutes = require("./routes/authRoutes");
 
 app.use(apiRoutes, authRoutes, htmlRoutes);
 
