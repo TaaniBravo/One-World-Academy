@@ -8,35 +8,35 @@
     />
     <title>One World Academy</title>
   </head>
-  <body class="text-center">
-    <!-- <header class="header header-bg"> -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <div class="container-fluid text-light">
-        <a class="navbar-brand" href="#"><img src="/public/assets/project2-logo.png" alt="" width="auto" height="22"></a>
+  <body>
+    <header class="header">
+      <div class="container header-bg">
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent nav-text">
+      <div class="container-fluid">
+        <a class="navbar-brand col-2 col-sm-6" href="#"><img src="../public/assets/project2-logo.png" alt="" width="auto" height="32"></a>
         <button class="navbar-toggler type="button" data-toggle="collapse" data-target="#navbarResponsive">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/testing/index.html">Home</a>
+            <li class="nav-item active ">
+              <a class="nav-link " href="/testing/index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/testing/create-course.html">Courses</a>
+              <a class="nav-link " href="/testing/create-course.html">Courses</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link" href="/testing/create-lesson.html">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/testing/sign-in.html">Log In</a>
+            <li class="nav-item ">
+              <a class="nav-link btn btn-block btn-warning text-light" href="/testing/sign-in.html">Log In</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- </header> -->
-    <form class="form-signin container my-3">
-      <h1 class="h3 mb-3 font-weight-normal text-muted">Create a Lesson</h1>
+    <form class="form-signin container my-5">
+      <h1 class="h3 mb-3 font-weight-normal text-muted text-center">Create a Lesson</h1>
       <div class="form-group">
         <p for="category" class="text-left">Select Course:</p>
         <select class="form-control" id="course" placeholder="Select Course">
@@ -64,8 +64,10 @@
       <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
         Create a Lesson
       </button>
-      <p class="mt-5 mb-3 text-muted">&copy; POD8 2021</p>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
     </form>
+    </div>
+  </header>
     <link
     rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"

@@ -8,6 +8,10 @@
 	background-repeat: no-repeat;
 }
 
+.navbar {
+	margin: 0;
+}
+
 /* .logo{
     height: 32px;
     width: auto;
