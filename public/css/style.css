@@ -4,7 +4,7 @@
 
 .header-bg {
 	background-image: url(/public/assets/hero-bg.png);
-	background-size: 90%;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
