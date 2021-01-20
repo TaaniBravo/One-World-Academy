@@ -40,11 +40,15 @@
             <div class="form-group">
               <p for="category" class="text-left">Select Course:</p>
               <select class="form-control" id="course" placeholder="Select Course">
+                <option value="english">{{English}}</option>
+                <option value="math">{{Math}}</option>
+                <option value="science">{{Science}}</option>
+                <option value="arts">{{Arts}}</option>
               </select>
             </div>
             <label for="lessonTitle" class="sr-only">Lesson Title</label>
             <input
-              type="lessonTitle"
+              type="text"
               id="lessonTitle"
               class="form-control my-1"
               placeholder="lesson Title"
@@ -53,7 +57,7 @@
             />
             <label for="lessonDescription" class="sr-only">Lesson Description</label>
             <textarea
-              type="lessonDescription"
+              type="text"
               id="lessonDescription"
               class="form-control my-1"
               placeholder="lesson Description"

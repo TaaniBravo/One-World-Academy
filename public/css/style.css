@@ -2,6 +2,11 @@
 
 /* BG Nav Image */
 
+/* .nav-text-color {
+	font-weight: 300;
+	color: white;
+} */
+
 .header-bg {
 	background-image: url("../assets/hero-bg.png");
 	background-size: cover;

@@ -39,7 +39,7 @@
       <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Course</h1>
       <label for="courseTitle" class="sr-only">Course Title</label>
       <input
-        type="courseTitle"
+        type="text"
         id="courseTitle"
         class="form-control my-1"
         placeholder="Course Title"
@@ -48,30 +48,26 @@
       />
       <label for="courseAuthor" class="sr-only">Course Author</label>
       <input
-        type="courseAuthor"
+        type="text"
+        name="courseAuthor"
         id="courseAuthor"
         class="form-control my-1"
         placeholder="Course Author"
-        required
-        autofocus
       />
       <label for="courseCategory" class="sr-only">Course Category</label>
-      <input
-        type="courseCategory"
-        id="courseCategory"
-        class="form-control my-1"
-        placeholder="Course Category"
-        required
-        autofocus
-      />
+      <select class="form-control" id="courseCategory">
+        <option value="english">English</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="arts">Arts</option>
+      </select>
       <label for="courseBio" class="sr-only">Course Bio</label>
       <textarea
-        type="courseBio"
+        type="text"
+        name="courseBio"
         id="courseBio"
         class="form-control my-1"
         placeholder="Course Bio"
-        required
-        autofocus
         rows="5"
       ></textarea>
       <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
