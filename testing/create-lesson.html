@@ -12,7 +12,7 @@
   <header class="header">
       <div class="container header-bg">
         <nav class="navbar navbar-expand-md navbar-light bg-transparent nav-text">
-          <div class="container-fluid">
+          <div class="container-fluid navbar-color">
             <a class="navbar-brand col-2 col-sm-6 p-0" href="/testing/index.html"><img src="../public/assets/project2-logo.png" alt="" width="auto" height="32"></a>
             <button class="navbar-toggler type="button" data-toggle="collapse" data-target="#navbarResponsive">
               <span class="navbar-toggler-icon"></span>
@@ -35,16 +35,20 @@
             </div>
           </div>
         </nav>
-          <form class="form-signin container form-padding">
+          <form class="form-signin container form-padding card-style">
             <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Lesson</h1>
             <div class="form-group">
               <p for="category" class="text-left">Select Course:</p>
               <select class="form-control" id="course" placeholder="Select Course">
+                <option value="english">{{English}}</option>
+                <option value="math">{{Math}}</option>
+                <option value="science">{{Science}}</option>
+                <option value="arts">{{Arts}}</option>
               </select>
             </div>
             <label for="lessonTitle" class="sr-only">Lesson Title</label>
             <input
-              type="lessonTitle"
+              type="text"
               id="lessonTitle"
               class="form-control my-1"
               placeholder="lesson Title"
@@ -53,7 +57,7 @@
             />
             <label for="lessonDescription" class="sr-only">Lesson Description</label>
             <textarea
-              type="lessonDescription"
+              type="text"
               id="lessonDescription"
               class="form-control my-1"
               placeholder="lesson Description"
