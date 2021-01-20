@@ -1,90 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>One World Academy</title>
-  </head>
-  <body>
-  <header class="header ">
-      <div class="container header-bg">
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent nav-text">
-      <div class="container-fluid navbar-color">
-        <a class="navbar-brand col-2 col-sm-6 p-0" href="/testing/index.html"><img src="../public/assets/project2-logo.png" alt="" width="auto" height="32"></a>
-        <button class="navbar-toggler type="button" data-toggle="collapse" data-target="#navbarResponsive">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active ">
-              <a class="nav-link " href="/testing/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/testing/create-course.html">Courses</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/testing/create-lesson.html">About</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link btn btn-block btn-warning text-light" href="/testing/sign-in.html">Log In</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <form class="form-signin container form-padding card-style">
-      <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Course</h1>
-      <label for="courseTitle" class="sr-only">Course Title</label>
-      <input
-        type="text"
-        id="courseTitle"
-        class="form-control my-1"
-        placeholder="Course Title"
-        required
-        autofocus
-      />
-      <label for="courseAuthor" class="sr-only">Course Author</label>
-      <input
-        type="text"
-        name="courseAuthor"
-        id="courseAuthor"
-        class="form-control my-1"
-        placeholder="Course Author"
-      />
-      <label for="courseCategory" class="sr-only">Course Category</label>
-      <select class="form-control" id="courseCategory">
-        <option value="english">English</option>
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-        <option value="arts">Arts</option>
-      </select>
-      <label for="courseBio" class="sr-only">Course Bio</label>
-      <textarea
-        type="text"
-        name="courseBio"
-        id="courseBio"
-        class="form-control my-1"
-        placeholder="Course Bio"
-        rows="5"
-      ></textarea>
-      <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
-        Create Course
-      </button>
-      <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
-    </form>
-    </div>
-    </header>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="/public/css/style.css" rel="stylesheet" />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<title>One World Academy</title>
+	</head>
+	<body>
+		<header class="header ">
+			<div class="container header-bg">
+				<nav
+					class="navbar navbar-expand-md navbar-light bg-transparent nav-text"
+				>
+					<div class="container-fluid navbar-color">
+						<a
+							class="navbar-brand col-2 col-sm-6 p-0"
+							href="/testing/index.html"
+							><img
+								src="../public/assets/project2-logo.png"
+								alt=""
+								width="auto"
+								height="32"
+						/></a>
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-toggle="collapse"
+							data-target="#navbarResponsive"
+						>
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarResponsive">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item active ">
+									<a class="nav-link " href="/testing/index.html">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link " href="/testing/create-course.html"
+										>Courses</a
+									>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="/testing/create-lesson.html"
+										>About</a
+									>
+								</li>
+								<li class="nav-item ">
+									<a
+										class="nav-link btn btn-block btn-warning text-light"
+										href="/testing/sign-in.html"
+										>Log In</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<form class="form-signin container form-padding card-style">
+					<h1 class="h3 py-3 font-weight-bold text-muted text-center"
+						>Create a Course</h1
+					>
+					<label for="courseTitle" class="sr-only">Course Title</label>
+					<input
+						type="text"
+						id="courseTitle"
+						class="form-control my-1"
+						placeholder="Course Title"
+						required
+						autofocus
+					/>
+					<label for="courseAuthor" class="sr-only">Course Author</label>
+					<input
+						type="text"
+						name="courseAuthor"
+						id="courseAuthor"
+						class="form-control my-1"
+						placeholder="Course Author"
+					/>
+					<label for="courseCategory" class="sr-only">Course Category</label>
+					<select class="form-control" id="courseCategory">
+						<option value="english">English</option>
+						<option value="math">Math</option>
+						<option value="science">Science</option>
+						<option value="arts">Arts</option>
+					</select>
+					<label for="courseBio" class="sr-only">Course Bio</label>
+					<textarea
+						type="text"
+						name="courseBio"
+						id="courseBio"
+						class="form-control my-1"
+						placeholder="Course Bio"
+						rows="5"
+					></textarea>
+					<button
+						class="btn btn-lg btn-warning btn-block text-light pull-right"
+						type="submit"
+					>
+						Create Course
+					</button>
+					<p class="py-3 text-muted text-center">&copy; POD8 2021</p>
+				</form>
+			</div>
+		</header>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+		<link href="/public/css/style.css" rel="stylesheet" />
+	</body>
 </html>
