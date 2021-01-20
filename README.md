@@ -18,3 +18,20 @@ SO THAT I can achieve my educational aspirations.
 * [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
+
+## Installation
+No installation required; users can create an account on One World Academy and use their email and password to login.
+
+## Usage
+
+## Tests
+
+## Credits
+
+### Technologies used
+* [Bootstrap](https://getbootstrap.com/)
+* [Quiz](https://quizapi.io/)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
