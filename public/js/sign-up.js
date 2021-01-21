@@ -7,7 +7,9 @@ $(document).ready(() => {
       first_name: $("#inputFirstName")
         .val()
         .trim(),
-      last_name: $("#inputLastName").val(),
+      last_name: $("#inputLastName")
+        .val()
+        .trim(),
       email: $("#inputEmail")
         .val()
         .trim(),
@@ -28,8 +30,7 @@ $(document).ready(() => {
       data: newUser
     }).then(() => {
       console.log("created new user");
-      // Reload the page to get the updated list
-      //   location.replace(/course/:newCourse.title)
+      window.location.replace("/profile");
     });
   });
 });
