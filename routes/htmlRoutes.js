@@ -9,7 +9,7 @@ module.exports = app => {
   app.get("/course-catalog", (req, res) => {
     res.render("course-catalog");
   });
-  
+
   app.get("/about-us", (req, res) => {
     res.render("about-us");
   });
