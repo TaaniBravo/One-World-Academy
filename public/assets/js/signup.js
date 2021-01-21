@@ -14,7 +14,12 @@ $(document).ready(() => {
       lastName: lastNameInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (
+      !userData.email ||
+      !userData.password ||
+      !userData.firstName ||
+      !userData.lastName
+    ) {
       return;
     }
     // If we have an email and password, run the signUpUser function
