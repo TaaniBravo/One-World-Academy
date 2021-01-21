@@ -1,2 +1,26 @@
-{{!-- P1 List all courses as tiles --}}
-{{!-- P2 Search for courses --}}
+<header class="header">
+    <div class="container header-bg">
+        {{> nav}}
+        <div class="container">
+            <div class="flex-grid">
+              {{!-- TODO update image for course catalog --}}
+                <section class="hero-col"><img class="hero-image"src="../public/assets/hero-image.png"/></section>
+                <section class="hero-col">
+                    <h3 class="h3-hero">Course Catalog</h3>
+                </section>
+            </div>
+        </div>
+    </div>
+</header>
+
+{{!-- TODO update data fields --}}
+{{#each course}}
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body" id="course-section">
+    <h5 class="card-title">{{courseTitle}}</h5>
+    <p class="card-text">{{courseDescription}}</p>
+    <a href="#" class="btn btn-primary">{{courseURL}}</a>
+  </div>
+</div>
+{{/each}}
