@@ -18,20 +18,27 @@ $(document).ready(() => {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
+    signUpUser(
+      userData.email,
+      userData.password,
+      userData.firstName,
+      userData.lastName
+    );
     emailInput.val("");
     passwordInput.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  const signUpUser = async (email, password) => {
+  const signUpUser = async (email, password, firstName, lastName) => {
     await $.post("/api/signup", {
       email: email,
-      password: password
+      password: password,
+      firstName: firstName,
+      lastName: lastName
     });
     try {
-      window.location.replace("/profile");
+      window.location.replace("/:user");
       // If there's an error, log the error
     } catch (err) {
       handleLoginErr(err);
