@@ -30,7 +30,7 @@ $(document).ready(() => {
     });
 
     try {
-      window.location.replace("/profile");
+      window.location.replace("/user");
       // If there's an error, log the error
     } catch (err) {
       console.log(err);
