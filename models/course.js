@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes) {
-  var Course = sequelize.define("Course", {
+module.exports = function(sequelize, DataTypes) {
+  const Course = sequelize.define("Course", {
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Course.associate = function (models) {
+  Course.associate = function(models) {
     Course.hasMany(models.Lesson, {
       onDelete: "cascade"
     });

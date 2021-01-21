@@ -1,12 +1,12 @@
-module.exports = function (sequelize, DataTypes) {
-  var Quiz = sequelize.define("Quiz", {
+module.exports = function(sequelize, DataTypes) {
+  const Quiz = sequelize.define("Quiz", {
     quizTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     }
   });
 
-  Quiz.associate = function (models) {
+  Quiz.associate = function(models) {
     Quiz.belongsTo(models.Lesson, {
       foreignKey: {
         allowNull: false
@@ -23,4 +23,4 @@ module.exports = function (sequelize, DataTypes) {
   };
 
   return Quiz;
-}
+};

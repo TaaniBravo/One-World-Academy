@@ -1,12 +1,12 @@
-module.exports = function (sequelize, DataTypes) {
-  var UserScores = sequelize.define("UserScores", {
+module.exports = function(sequelize, DataTypes) {
+  const UserScores = sequelize.define("UserScores", {
     score: {
       type: DataTypes.INT,
-      allowNull: false,
-    },
+      allowNull: false
+    }
   });
 
-  UserScores.associate = function (models) {
+  UserScores.associate = function(models) {
     UserScores.belongsTo(models.Quiz, {
       foreignKey: {
         allowNull: true
@@ -15,4 +15,4 @@ module.exports = function (sequelize, DataTypes) {
   };
 
   return UserScores;
-}
+};

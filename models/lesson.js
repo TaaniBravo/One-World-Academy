@@ -1,17 +1,17 @@
-module.exports = function (sequelize, DataTypes) {
-  var Lesson = sequelize.define("Lesson", {
+module.exports = function(sequelize, DataTypes) {
+  const Lesson = sequelize.define("Lesson", {
     lessonTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
 
     lecture: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
     }
   });
 
-  Lesson.associate = function (models) {
+  Lesson.associate = function(models) {
     Lesson.hasMany(models.quiz, {
       onDelete: "cascade"
     });
@@ -24,4 +24,4 @@ module.exports = function (sequelize, DataTypes) {
   };
 
   return Lesson;
-}
+};
