@@ -36,14 +36,14 @@ $(document).ready(() => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   const signUpUser = async (email, password, firstName, lastName) => {
-    await $.post("/api/signup", {
+    await $.post("/api/user", {
       email: email,
       password: password,
       firstName: firstName,
       lastName: lastName
     });
     try {
-      window.location.replace("/:user");
+      window.location.replace("/user");
       // If there's an error, log the error
     } catch (err) {
       handleLoginErr(err);
