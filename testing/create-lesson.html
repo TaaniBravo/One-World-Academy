@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>One World Academy</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-bg">
+      <nav class="navbar navbar-expand-md navbar-light bg-transparent nav-text">
+        <div class="container-fluid navbar-color">
+          <a class="navbar-brand col-2 col-sm-6 p-0" href="/testing/index.html"><img
+              src="../public/assets/project2-logo.png" alt="" width="auto" height="32"></a>
+          <button class="navbar-toggler type=" button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active ">
+                <a class="nav-link " href="/testing/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/testing/create-course.html">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/testing/create-lesson.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-block btn-warning text-light" href="/testing/login.html">Log In</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <form class="form-signin container form-padding card-style">
+        <h1 class="h3 py-3 font-weight-bold text-muted text-center">Create a Lesson</h1>
+        <div class="form-group">
+          <p for="category" class="text-left">Select Course:</p>
+          <select class="form-control" id="course" placeholder="Select Course">
+            <option value="english">{{English}}</option>
+          </select>
+        </div>
+        <label for="lessonTitle" class="sr-only">Lesson Title</label>
+        <input type="text" id="lessonTitle" class="form-control my-1" placeholder="Lesson Title" required autofocus />
+        <label for="lessonDescription" class="sr-only">Lesson Description</label>
+        <textarea type="text" id="lessonDescription" class="form-control my-1" placeholder="Lesson Description" required
+          autofocus rows="5"></textarea>
+        <button id="create-lesson-btn" class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
+          Create a Lesson
+        </button>
+        <p class="py-3 text-muted text-center">&copy; POD8 2021</p>
+      </form>
+    </div>
+  </header>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="/public/css/style.css" rel="stylesheet" />
+  <script src="../public/js/create-lesson.js"></script>
+
+</body>
+
+</html>
