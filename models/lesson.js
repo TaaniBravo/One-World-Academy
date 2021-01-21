@@ -5,13 +5,17 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
 
-      description: {
+      lecture: {
         type: DataTypes.TEXT,
         allowNull: false,
       }
     });
   
     Lesson.associate = function(models) {
+      Lesson.hasMany(models.quiz, {
+        onDelete: "cascade"
+      });
+    
       Lesson.belongsTo(models.Course, {
         foreignKey: {
           allowNull: false
