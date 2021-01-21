@@ -2,7 +2,8 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 
-const passport = require("./config/passport");
+const passport = require("passport");
+require("./config/passport");
 
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
@@ -21,10 +22,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const apiRoutes = require("./routes/apiRoutes")(app);
-const htmlRoutes = require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
-app.use(apiRoutes, htmlRoutes);
+// app.use(apiRoutes, htmlRoutes);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {

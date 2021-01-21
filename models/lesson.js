@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Lesson.associate = function(models) {
-    Lesson.hasMany(models.quiz, {
+    Lesson.hasMany(models.Quiz, {
       onDelete: "cascade"
     });
 
