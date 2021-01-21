@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <header class="header">
+  <!-- Navigation -->
+  <header class="header ">
     <div class="container header-bg">
       <nav class="navbar navbar-expand-md navbar-light bg-transparent nav-text">
         <div class="container-fluid navbar-color">
@@ -25,10 +26,10 @@
               <li class="nav-item">
                 <a class="nav-link " href="/testing/create-course.html">Courses</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a class="nav-link" href="/testing/create-lesson.html">About</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a class="nav-link btn btn-block btn-warning text-light" href="/testing/login.html">Log In</a>
               </li>
             </ul>
@@ -36,20 +37,13 @@
         </div>
       </nav>
       <form class="form-signin container form-padding card-style">
-        <h1 class="h3 py-3 font-weight-bold text-muted text-center">Create a Lesson</h1>
-        <div class="form-group">
-          <p for="category" class="text-left">Select Course:</p>
-          <select class="form-control" id="course" placeholder="Select Course">
-            <option value="english">{{English}}</option>
-          </select>
-        </div>
-        <label for="lessonTitle" class="sr-only">Lesson Title</label>
-        <input type="text" id="lessonTitle" class="form-control my-1" placeholder="Lesson Title" required autofocus />
-        <label for="lessonDescription" class="sr-only">Lesson Description</label>
-        <textarea type="text" id="lessonDescription" class="form-control my-1" placeholder="Lesson Description" required
-          autofocus rows="5"></textarea>
-        <button id="create-lesson-btn" class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
-          Create a Lesson
+        <h1 class="h3 py-3 font-weight-bold text-muted text-center">Please Sign In</h1>
+        <label for="inputEmail" class="sr-only">Email Address</label>
+        <input type="email" id="inputEmail" class="form-control my-1" placeholder="Email Address" required autofocus />
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control my-1" placeholder="Password" required />
+        <button id="login-btn" class="btn btn-lg btn-warning btn-block text-light" type="submit">
+          Log In
         </button>
         <p class="py-3 text-muted text-center">&copy; POD8 2021</p>
       </form>
@@ -61,7 +55,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <link href="/public/css/style.css" rel="stylesheet" />
-  <script src="../public/js/create-lesson.js"></script>
+  <script src="../public/js/login.js"></script>
 
 </body>
 
