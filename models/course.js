@@ -32,5 +32,11 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+  Course.belongsTo(models.User, {
+    foreginKey: {
+      allowNull: false
+    }
+  });
+
   return Course;
 };

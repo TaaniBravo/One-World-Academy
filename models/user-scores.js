@@ -3,6 +3,22 @@ module.exports = function(sequelize, DataTypes) {
     score: {
       type: DataTypes.INT,
       allowNull: false
+    },
+
+    userID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: "id"
+      }
+    },
+
+    quizID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Quiz,
+        key: "id"
+      }
     }
   });
 
