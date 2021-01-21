@@ -17,8 +17,8 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
 
-    Quiz.hasMany(models.UserScores, {
-      onDelete: "cascade"
+    Quiz.belongsToMany(models.User, {
+      through: models.UserScores
     });
   };
 
