@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "oneworldacademy",
+    "password": "2b.D_?rtwbjm",
+    "database": "owaDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
