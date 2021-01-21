@@ -25,11 +25,12 @@ module.exports = function(sequelize, DataTypes) {
 
     bio: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
 
     profilePic: {
       type: DataTypes.STRING,
+      allowNull: true,
       validate: {
         isUrl: true
       }
