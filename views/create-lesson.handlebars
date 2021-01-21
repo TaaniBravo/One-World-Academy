@@ -1,0 +1,29 @@
+<form class="form-signin container form-padding card-style">
+
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Lesson</h1>
+
+    <div class="form-group">
+        <p for="category" class="text-left">Select Course:</p>
+        <select class="form-control" id="course" placeholder="Select Course">
+            {{!-- TODO add dynamic data from database --}}
+            <option value="english">{{English}}</option>
+            <option value="math">{{Math}}</option>
+            <option value="science">{{Science}}</option>
+            <option value="arts">{{Arts}}</option>
+        </select>
+    </div>
+
+    {{!-- Lesson title user input --}}
+    <label for="lessonTitle" class="sr-only">Lesson Title</label>
+    <input type="text" id="lessonTitle" class="form-control my-1" placeholder="lesson Title" required autofocus/>
+    
+    {{!-- Lesson description user input --}}
+    <label for="lessonDescription" class="sr-only">Lesson Description</label>
+    <textarea type="text" id="lessonDescription" class="form-control my-1" placeholder="lesson Description" required autofocus rows="5"></textarea>
+    
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
+        Create a Lesson
+    </button>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+</form>
