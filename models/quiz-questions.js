@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Quiz.associate = function(models) {
+  QuizQuestions.associate = function(models) {
     QuizQuestions.belongsTo(models.Quiz, {
       foreignKey: {
         allowNull: false
