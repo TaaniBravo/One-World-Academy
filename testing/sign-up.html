@@ -30,15 +30,15 @@
               <a class="nav-link" href="/testing/create-lesson.html">About</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link btn btn-block btn-warning text-light" href="/testing/sign-in.html">Log In</a>
+              <a class="nav-link btn btn-block btn-warning text-light" href="/testing/login.html">Log In</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <form class="form-signin container form-padding card-style">
-      <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create an Account</h1>
-      <label for="inputEmail" class="sr-only">First Name</label>
+      <h1 class="h3 py-3font-weight-bold text-muted text-center">Create an Account</h1>
+      <label for="inputFirstName" class="sr-only">First Name</label>
       <input
         type="text"
         id="inputFirstName"
@@ -47,7 +47,7 @@
         required
         autofocus
       />
-      <label for="inputEmail" class="sr-only">Last Name</label>
+      <label for="inputLastName" class="sr-only">Last Name</label>
       <input
         type="text"
         id="inputLastName"
@@ -73,18 +73,18 @@
         placeholder="Password"
         required
       />
-      <label for="inputSocialMedia" class="sr-only">Password</label>
+      <label for="inputBio" class="sr-only">Bio</label>
       <input
         type="text"
-        id="inputSocialMedia"
+        id="inputBio"
         class="form-control my-1"
-        placeholder="Social Media"
+        placeholder="Bio"
         required
       />
-      <button class="btn btn-lg btn-warning btn-block text-light" type="submit">
+      <button id="signup-btn" class="btn btn-lg btn-warning btn-block text-light" type="submit">
         Create Account
       </button>
-      <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+      <p class="py-3 text-muted text-center">&copy; POD8 2021</p>
     </form>
     </div>
     </header>
@@ -97,5 +97,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="/public/css/style.css" rel="stylesheet" />
+		<script src="../public/js/sign-up.js"></script>
   </body>
 </html>
