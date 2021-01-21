@@ -18,13 +18,16 @@ module.exports = app => {
   });
 
   //   IF a user who's not logged in tries to access any of these routes they will be redirected to the signup page.
-  app.get("/courses", isAuthenticated, (req, res) => {
+  app.get("/:user", isAuthenticated, (req, res) => {
     res.redirect("/login");
   });
-  app.get("/profile", isAuthenticated, (req, res) => {
+  app.get("/cms", isAuthenticated, (req, res) => {
     res.redirect("/login");
   });
-  app.get("/quizzes", isAuthenticated, (req, res) => {
+  app.get("/create-course", isAuthenticated, (req, res) => {
+    res.redirect("/login");
+  });
+  app.get("/create-lesson", isAuthenticated, (req, res) => {
     res.redirect("/login");
   });
 };
