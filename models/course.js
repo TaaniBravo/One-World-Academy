@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   Course.belongsTo(models.User, {
-    foreginKey: {
+    foreignKey: {
       allowNull: false
     }
   });
