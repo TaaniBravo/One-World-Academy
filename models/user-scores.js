@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   const UserScores = sequelize.define("UserScores", {
     score: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
 
