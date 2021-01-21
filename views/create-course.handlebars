@@ -1,0 +1,30 @@
+<form class="form-signin container form-padding card-style">
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Course</h1>
+
+    {{!-- Course title user input --}}
+    <label for="courseTitle" class="sr-only">Course Title</label>
+    <input type="text" id="courseTitle" class="form-control my-1" placeholder="Course Title" required autofocus/>
+    
+    {{!-- Course author user input --}}
+    <label for="courseAuthor" class="sr-only">Course Author</label>
+    <input type="text" name="courseAuthor" id="courseAuthor" class="form-control my-1" placeholder="Course Author"/>
+    
+    {{!-- Course category user input --}}
+    <label for="courseCategory" class="sr-only">Course Category</label>
+    <select class="form-control" id="courseCategory">
+        <option value="english">English</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="arts">Arts</option>
+    </select>
+
+    {{!-- Course description user input --}}
+    <label for="courseDescription" class="sr-only">Course Description</label>
+    <textarea type="text" id="courseDescription" name="courseDescription" class="form-control my-1" placeholder="Course Bio" rows="5"></textarea>
+    
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
+        Create Course
+    </button>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+</form>
