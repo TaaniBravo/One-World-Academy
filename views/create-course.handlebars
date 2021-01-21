@@ -3,15 +3,15 @@
 
     {{!-- Course title user input --}}
     <label for="courseTitle" class="sr-only">Course Title</label>
-    <input type="text" id="courseTitle" class="form-control my-1" placeholder="Course Title" required autofocus/>
+    <input type="text" id="courseTitle" name="courseTitle" class="form-control my-1" placeholder="Course Title" required autofocus/>
     
     {{!-- Course author user input --}}
     <label for="courseAuthor" class="sr-only">Course Author</label>
-    <input type="text" name="courseAuthor" id="courseAuthor" class="form-control my-1" placeholder="Course Author"/>
+    <input type="text" name="courseAuthor" id="courseAuthor" name="courseAuthor" class="form-control my-1" placeholder="Course Author"/>
     
     {{!-- Course category user input --}}
     <label for="courseCategory" class="sr-only">Course Category</label>
-    <select class="form-control" id="courseCategory">
+    <select class="form-control" id="courseCategory" name="courseCategory">
         <option value="english">English</option>
         <option value="math">Math</option>
         <option value="science">Science</option>
