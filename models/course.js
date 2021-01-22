@@ -30,13 +30,13 @@ module.exports = function(sequelize, DataTypes) {
     Course.hasMany(models.Lesson, {
       onDelete: "cascade"
     });
-  };
 
-  Course.belongsTo(models.User, {
-    foreginKey: {
-      allowNull: false
-    }
-  });
+    Course.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Course;
 };
