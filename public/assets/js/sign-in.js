@@ -24,7 +24,7 @@ $(document).ready(() => {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   const loginUser = async (email, password) => {
-    await $.post("/api/login", {
+    await $.post("/api/sign-in", {
       email: email,
       password: password
     });
