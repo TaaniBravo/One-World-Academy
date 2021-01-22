@@ -38,7 +38,7 @@ $(document).ready(() => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   const signUpUser = async (email, password, firstName, lastName) => {
-    await $.post("/api/user", {
+    await $.post("/api/sign-up", {
       email: email,
       password: password,
       firstName: firstName,
