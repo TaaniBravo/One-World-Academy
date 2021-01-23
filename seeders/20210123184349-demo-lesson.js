@@ -7,7 +7,8 @@ module.exports = {
         lessonTitle: "Variables",
         lecture: "Basic types of variable include string, int, and boolean.",
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        CourseId: 1
       },
 
       {
@@ -15,7 +16,8 @@ module.exports = {
         lecture:
           "An array is a data structure that contains a group of elements. Typically these elements are all of the same data type, such as an integer or string.",
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        CourseId: 1
       }
     ]);
   },
