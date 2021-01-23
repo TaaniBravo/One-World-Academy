@@ -1,5 +1,6 @@
 // Requiring our middleware for checking if a user is logged in or not.
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
 module.exports = app => {
   app.get("/", (req, res) => {
@@ -29,16 +30,27 @@ module.exports = app => {
   });
 
   //   IF a user who's not logged in tries to access any of these routes they will be rendered to the signup page.
-  app.get("/user", isAuthenticated, (req, res) => {
-    res.render("sign-in");
+  app.get("/user", isAuthenticated, async (req, res) => {
+    const userData = await db.User.findOne({
+      where: { id: req.user.id }
+    });
+
+    res.render("/user", userData);
   });
-  app.get("/cms", isAuthenticated, (req, res) => {
-    res.render("sign-in");
+
+  app.get("/course/:id", isAuthenticated, (req, res) => {
+    res.render("/course/:id");
   });
+
   app.get("/create-course", isAuthenticated, (req, res) => {
-    res.render("sign-in");
+    res.render("create-course");
   });
+
   app.get("/create-lesson", isAuthenticated, (req, res) => {
-    res.render("sign-in");
+    res.render("create-lesson");
+  });
+
+  app.get("/create-quiz", isAuthenticated, (req, res) => {
+    res.render("create-quiz");
   });
 };
