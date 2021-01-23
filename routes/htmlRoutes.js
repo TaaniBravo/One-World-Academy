@@ -7,7 +7,57 @@ module.exports = app => {
   });
 
   app.get("/course-catalog", (req, res) => {
-    res.render("course-catalog");
+    //For testing purposes
+
+    const course = [
+      {
+        courseTitle: "Javascript",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/javascript",
+        imageURL:
+          "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
+      },
+      {
+        courseTitle: "Node JS",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/nodejs",
+        imageURL:
+          "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
+      },
+      {
+        courseTitle: "React",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/react",
+        imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
+      },
+      {
+        courseTitle: "Javascript",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/javascript",
+        imageURL:
+          "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
+      },
+      {
+        courseTitle: "Node JS",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/nodejs",
+        imageURL:
+          "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
+      },
+      {
+        courseTitle: "React",
+        courseDescription:
+          "A 2 Month course on Node JS and Server Side Programming",
+        courseURL: "course/react",
+        imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
+      }
+    ];
+    res.render("course-catalog", { courseCatalog: course });
   });
 
   app.get("/about-us", (req, res) => {
