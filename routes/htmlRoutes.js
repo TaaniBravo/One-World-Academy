@@ -30,6 +30,7 @@ module.exports = app => {
   });
 
   //   IF a user who's not logged in tries to access any of these routes they will be rendered to the signup page.
+  // Route for the user's profile.
   app.get("/user", isAuthenticated, async (req, res) => {
     const userData = await db.User.findOne({
       where: { id: req.user.id }
@@ -38,18 +39,26 @@ module.exports = app => {
     res.render("/user", userData);
   });
 
-  app.get("/course/:id", isAuthenticated, (req, res) => {
-    res.render("/course/:id");
+  // Route for viewing a single course.
+  app.get("/courses/:id", isAuthenticated, async (req, res) => {
+    const courseData = await db.Course.findOne({
+      where: { id: req.params.id }
+    });
+
+    res.render("/courses/:id", courseData);
   });
 
+  // Route for creating a course.
   app.get("/create-course", isAuthenticated, (req, res) => {
     res.render("create-course");
   });
 
+  // Route for creating a lesson.
   app.get("/create-lesson", isAuthenticated, (req, res) => {
     res.render("create-lesson");
   });
 
+  // Route for creating a lesson.
   app.get("/create-quiz", isAuthenticated, (req, res) => {
     res.render("create-quiz");
   });

@@ -51,7 +51,8 @@ module.exports = app => {
       title: req.body.title,
       category: req.body.category,
       banner: req.body.banner,
-      courseBio: req.body.courseBio
+      courseBio: req.body.courseBio,
+      userId: req.user.id
     });
 
     try {
@@ -64,7 +65,8 @@ module.exports = app => {
   app.post("/api/create-lesson", async (req, res) => {
     await db.Lesson.create({
       lessonTitle: req.body.lessonTitle,
-      lecture: req.body.lecture
+      lecture: req.body.lecture,
+      courseId: req.params.courseId
     });
 
     try {
@@ -76,7 +78,18 @@ module.exports = app => {
 
   app.post("/api/create-quiz", async (req, res) => {
     await db.Quiz.create({
-      quizTitle: req.body.quizTitle
+      quizTitle: req.body.quizTitle,
+      lessonId: req.params.lessonId
+    });
+
+    await db.QuizQuestions.create({
+      question: req.body.question,
+      choiceOne: req.body.choiceOne,
+      choiceTwo: req.body.choiceTwo,
+      choiceThree: req.body.choiceThree,
+      choiceFour: req.body.choiceFour,
+      answer: req.body.answer,
+      quizId: req.params.quizId
     });
 
     try {
