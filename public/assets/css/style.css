@@ -63,7 +63,8 @@ body {
 	justify-content: space-between;
 }
 .flex-course-col {
-	width: 32%;
+	width: 24%;
+	margin: 5px;
 }
 .h1-hero {
 	padding-top: 20px;

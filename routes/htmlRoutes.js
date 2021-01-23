@@ -61,7 +61,7 @@ module.exports = app => {
   });
 
   // Displays a single course, or returns false
-  app.get("/api/courses/:course", (req, res) => {
+  app.get("/courses/:course", (req, res) => {
     const singleCourse = req.params.course;
 
     console.log(singleCourse);
