@@ -107,6 +107,8 @@ module.exports = app => {
       }
     });
 
+    console.log(userData);
+
     res.render("user", userData);
   });
 
