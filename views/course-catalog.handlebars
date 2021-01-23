@@ -30,11 +30,11 @@
     <div class="container text-center py-3">
       <h5 class="h5-hero-2">All Courses</h5>
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-around">
       {{!-- TODO update data fields --}}
         {{#each courseCatalog}}
-        <div class="card col-12 col-sm-3 my-1">
-          <img src="{{imageURL}}" class="card-img-top" alt="...">
+        <div class="card-style flex-course-col m-1">
+          <img src="{{imageURL}}" class="card-img-top" alt="..." style="border-radius: 10px 10px 0 0;">
           <div class="card-body" id="course-section">
             <h5 class="card-title">{{courseTitle}}</h5>
             <p class="card-text">{{courseDescription}}</p>
