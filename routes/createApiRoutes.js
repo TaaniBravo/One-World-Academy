@@ -3,8 +3,8 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/create-course", async (req, res) => {
-    await db.Course.create({
+  app.post("/api/courses", async (req, res) => {
+    const newCourse = await db.Course.create({
       title: req.body.title,
       category: req.body.category,
       banner: req.body.banner,
@@ -13,7 +13,7 @@ module.exports = app => {
     });
 
     try {
-      res.redirect(307, "/api/courses");
+      res.json(newCourse);
     } catch (error) {
       res.status(401).json(error);
     }
