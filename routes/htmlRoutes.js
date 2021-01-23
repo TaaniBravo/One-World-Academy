@@ -102,31 +102,30 @@ module.exports = app => {
   app.get("/user", isAuthenticated, async (req, res) => {
     const userData = await db.User.findOne({
       where: { id: req.user.id },
-      insert: {
-        model: db.Course
-      }
-    });
-
-    console.log(userData);
-
-    res.render("user", userData);
-  });
-
-  app.get("/edit-user", isAuthenticated, async (req, res) => {
-    const userData = await db.User.findOne({
-      where: { id: req.user.id }
+      include: [
+        {
+          model: db.Course
+        }
+      ]
     });
     res.render("user", userData.dataValues);
   });
 
-  // Route for viewing a single course.
-  app.get("/courses/:id", isAuthenticated, async (req, res) => {
-    const courseData = await db.Course.findOne({
-      where: { id: req.params.id }
-    });
+  // app.get("/edit-user", isAuthenticated, async (req, res) => {
+  //   const userData = await db.User.findOne({
+  //     where: { id: req.user.id }
+  //   });
+  //   res.render("user", userData.dataValues);
+  // });
 
-    res.render("courses/:id", courseData);
-  });
+  // Route for viewing a single course.
+  // app.get("/courses/:id", isAuthenticated, async (req, res) => {
+  //   const courseData = await db.Course.findOne({
+  //     where: { id: req.params.id }
+  //   });
+
+  //   res.render("courses/:id", courseData);
+  // });
 
   // Route for creating a course.
   app.get("/create-course", isAuthenticated, (req, res) => {
