@@ -1,8 +1,5 @@
-<header class="header">
-    <div class="container header-bg">
-        {{> nav}}
-    </div>
-</header>
+<!-- Header -->
+{{> header}}
 
 <form class="form-signin container form-padding card-style">
     <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create an Account</h1>
@@ -31,7 +28,9 @@
     <button class="btn btn-lg btn-warning btn-block text-light" type="submit">
         Create Account
     </button>
-    
+
+    <p class="mt-3 text-muted text-center">Already have an account? <a href="/sign-in">Sign in</a></p>
+
     <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
 </form>
 
