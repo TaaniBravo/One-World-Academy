@@ -13,7 +13,7 @@ module.exports = app => {
     });
 
     try {
-      res.redirect(307, "/api/courses");
+      res.json(newCourse);
     } catch (error) {
       res.status(401).json(error);
     }
