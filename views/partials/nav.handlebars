@@ -23,9 +23,12 @@
                 {{!-- TODO update link --}}
                 <a class="nav-link" href="/about-us">About</a>
             </li>
-            <li class="nav-item ">
-                {{!-- TODO update link --}}
-                <a class="nav-link btn btn-block btn-warning text-light" href="/sign-in">Log In</a>
+            <li class="nav-item">
+                {{#if user}}
+                <p>{{user.name}}</p>
+                {{else}}
+                <a class="nav-link btn btn-block btn-warning text-light" href="/testing/sign-in.html">Log In</a>
+                {{/if}}
             </li>
             </ul>
         </div>
