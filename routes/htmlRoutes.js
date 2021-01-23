@@ -114,14 +114,19 @@ module.exports = app => {
   // Route for the user's profile.
   app.get("/user", isAuthenticated, async (req, res) => {
     const userData = await db.User.findOne({
-      where: { id: req.user.id },
-      include: [
-        {
-          model: db.Course
-        }
-      ]
+      where: { id: req.user.id }
     });
-    res.render("user", userData.dataValues);
+
+    const courseData = await db.Course.findAll({
+      where: { userId: req.user.id }
+    });
+
+    console.log(userData.dataValues);
+    console.log(courseData);
+    res.render("user", {
+      user: userData.dataValues,
+      course: courseData
+    });
   });
 
   // app.get("/edit-user", isAuthenticated, async (req, res) => {
