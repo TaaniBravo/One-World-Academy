@@ -13,7 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    extname: "exphbs",
+    defaultLayout: "main",
+    layoutsDir: _dirname + "views/layouts",
+    partialsDir: _dirname + "views/partials"
+  })
+);
 app.set("view engine", "handlebars");
 
 app.use(

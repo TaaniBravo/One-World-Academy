@@ -1,3 +1,9 @@
+<header class="header">
+    <div class="container header-bg">
+        {{> nav}}
+    </div>
+</header>
+
 <form class="form-signin container form-padding card-style">
     <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create an Account</h1>
 
@@ -18,6 +24,7 @@
     <input type="password" id="inputPassword" name="password" class="form-control my-1" placeholder="Password" required/>
     
     {{!-- Social media user input --}}
+    {{!-- TODO remove social media? --}}
     <label for="socialMedia" class="sr-only">Social Media</label>
     <input type="text" id="inputSocialMedia" name="socialMedia" class="form-control my-1" placeholder="Social Media" required/>
 
