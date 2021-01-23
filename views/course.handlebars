@@ -6,15 +6,22 @@
               {{!-- TODO update image for course type --}}
                 <section class="hero-col"><img class="hero-image"src="../public/assets/hero-image.png"/></section>
                 <section class="hero-col">
-                    <h3 class="h3-hero">{{course-title}}</h3>
+                    <h3 class="h3-hero">{{title}}</h3>
                 </section>
             </div>
         </div>
     </div>
 </header>
 
-
-
-{{> lesson }}
-
-{{> quiz }}
+<div class="welcome">
+<div class="container text-center py-3">
+    <div class="container">
+    <div class="row">
+    {{!-- TODO update data fields --}}
+    {{#each lesson}}
+        {{> lesson}}
+    {{/each}}
+    </div>
+    </div>
+</div>
+</div>
