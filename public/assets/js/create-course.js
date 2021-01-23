@@ -7,6 +7,7 @@ $(document).ready(() => {
         .val()
         .trim(),
       category: $("#courseCategory").val(),
+      courseImage: $("#courseImage").val(),
       description: $(".courseBio")
         .val()
         .trim()

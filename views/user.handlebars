@@ -1,17 +1,33 @@
+<header class="header">
+    <div class="container header-bg">
+        {{> nav}}
+        <div class="container">
+        <div class="flex-grid card-style">
+          <section class="hero-col">
+            <h1 class="h1-hero">User Profile</h1>
+                <div class="col ">
+                  <img src="{{profilePic}}" style="width: 32px;">
+                </div>
+          </section>
+            <div class="row">
+          <section class="hero-col">
+                <div class="col">
+                  <p class="fs-2">{{firstName}} {{lastName}}</p>
+                  <p><span class="fw-bold">Email: </span>{{email}}</p>
+                  <p><span class="fw-bold">Social Media: </span> {{bio}}</p>
+                </div>
+              </div>
+              </section>
+        </div>
+      </div>
+    </div>
+</header>
+
 <div class="container">
   <div class="row">
     <h2>User Profile</h2>
   </div>
-  <div class="row">
-    <div class="col">
-      <img src="/public/assets/images/user.png">
-    </div>
-    <div class="col">
-      <p class="fs-2">{{firstName}} {{lastName}}</p>
-      <p><span class="fw-bold">Email: </span>{{email}}</p>
-      <p><span class="fw-bold">Social Media: </span> {{social}}</p>
-    </div>
-  </div>
+  
 </div>
 
 <div class="container">
@@ -20,14 +36,5 @@
 </div>
 
 <div class="container">
-  <h3>Your Courses</h3>
-  <div class="list-group">
-    <a href="{{courseURL}}" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{courseTitle}}</h5>
-        <small>{{category}}</small>
-      </div>
-      <p class="mb-1">{{courseDescription}}</p>
-    </a>
-  </div>
+{{> course-tile}}
 </div>
