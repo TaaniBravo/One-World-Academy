@@ -103,7 +103,6 @@ module.exports = app => {
     const userData = await db.User.findOne({
       where: { id: req.user.id }
     });
-    console.log(userData.dataValues);
     res.render("user", userData.dataValues);
   });
 
