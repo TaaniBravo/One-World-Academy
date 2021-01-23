@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    banner: {
+    courseImage: {
       type: DataTypes.STRING,
       allowNull: true
     },
 
-    courseBio: {
+    courseDescription: {
       type: DataTypes.TEXT,
       allowNull: false
     }
