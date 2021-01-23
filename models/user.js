@@ -30,7 +30,9 @@ module.exports = function(sequelize, DataTypes) {
 
     profilePic: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
+      defaultValue:
+        "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fmiddle%2F157-1578186_user-profile-default-image-png-clipart.png",
       validate: {
         isUrl: true
       }
