@@ -48,6 +48,14 @@
 .hero-col {
 	flex: 1;
 }
+
+.flex-course{
+	display: flex;
+	justify-content: space-between;
+}
+.flex-course-col {
+	width: 32%;
+}
 .h1-hero {
 	padding-top: 20px;
 	padding-bottom: 20px;
