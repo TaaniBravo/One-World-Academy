@@ -33,18 +33,19 @@ module.exports = app => {
   });
 
   // Route for getting some data about our user to be used client side.
-  // app.get("/api/user_data", async (req, res) => {
-  //   if (!req.user) {
-  //     // The user is not logged in, send back an empty object
-  //     res.json({});
-  //   } else {
-  //     // Otherwise send back the user's email and id
-  //     const userData = await db.User.findOne({
-  //       where: { id: req.user.id }
-  //     });
-  //   }
-  //   res.json(userData);
-  // });
+  app.get("/api/user_data", async (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      const userData = await db.User.findOne({
+        where: { id: req.user.id }
+      });
+
+      res.json(userData);
+    }
+  });
 
   // app.get("/api/user", async (req, res) => {
   //   const userData = await db.User.findOne({
