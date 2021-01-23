@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <h2>User Profile</h2>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="/public/assets/images/user.png">
+    </div>
+    <div class="col">
+      <p class="fs-2">{{firstName}} {{lastName}}</p>
+      <p><span class="fw-bold">Email: </span>{{email}}</p>
+      <p><span class="fw-bold">Social Media: </span> {{social}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  
+
+</div>
+
+<div class="container">
+  <h3>Your Courses</h3>
+  <div class="list-group">
+    <a href="{{courseURL}}" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{courseTitle}}</h5>
+        <small>{{category}}</small>
+      </div>
+      <p class="mb-1">{{courseDescription}}</p>
+    </a>
+  </div>
+</div>
