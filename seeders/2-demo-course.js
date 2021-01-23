@@ -7,7 +7,7 @@ module.exports = {
         id: 1,
         title: "JS Entry Level",
         category: "JS",
-        courseImage: "Free Course",
+        courseImage: null,
         courseDescription:
           "This is a course for the beginners with JS language.",
         createdAt: new Date(),
@@ -19,8 +19,8 @@ module.exports = {
         id: 2,
         title: "CSS Entry Level",
         category: "CSS",
-        banner: "Free Course",
-        courseBio: "This is a course for the beginners with CSS language.",
+        banner: null,
+        courseDescription: "This is a course for the beginners with CSS language.",
         createdAt: new Date(),
         updatedAt: new Date(),
         UserId: 1
