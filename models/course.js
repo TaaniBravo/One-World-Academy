@@ -21,8 +21,8 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     courseBio: {
-      type: DataTypes.STRING,
-      allowNull: true
+      type: DataTypes.TEXT,
+      allowNull: false
     }
   });
 
