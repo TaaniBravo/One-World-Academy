@@ -1,8 +1,10 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const signUpForm = $("form.signup");
-  const emailInput = $("input#email-input");
-  const passwordInput = $("input#password-input");
+  const signUpForm = $("form.form-signin");
+  const firstNameInput = $("input#inputFirstName");
+  const lastNameInput = $("input#inputLastName");
+  const emailInput = $("input#inputEmail");
+  const passwordInput = $("input#inputPassword");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -36,14 +38,14 @@ $(document).ready(() => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   const signUpUser = async (email, password, firstName, lastName) => {
-    await $.post("/api/signup", {
+    await $.post("/api/sign-up", {
       email: email,
       password: password,
       firstName: firstName,
       lastName: lastName
     });
     try {
-      window.location.replace("/:user");
+      window.location.replace("/user");
       // If there's an error, log the error
     } catch (err) {
       handleLoginErr(err);
