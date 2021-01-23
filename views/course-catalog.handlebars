@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container header-bg">
         {{> nav}}
-        <div class="container">
+        <!-- {{!-- <div class="container">
             <div class="flex-grid">
               {{!-- TODO update image for course catalog --}}
                 <section class="hero-col"><img class="hero-image"src="../public/assets/hero-image.png"/></section>
@@ -9,18 +9,32 @@
                     <h3 class="h3-hero">Course Catalog</h3>
                 </section>
             </div>
+        </div> --}} -->
+        <div class="container">
+        <div class="flex-grid">
+          <section class="hero-col">
+            <h3 class="h3-hero">Checkout our entire:</h3>
+            <h1 class="h1-hero">Course Catalog</h1>
+            <h5 class="h5-hero"> You can find all of our courses here. English, Math, Science, Arts...Everything!</h5>
+            <a class="btn button-green text-light col-12 col-sm-4 m-1" href="/create-course">Create a Course</a>
+            <a class="btn btn-info text-light col-12 col-sm-4 m-1" href="/create-lesson">Create a Lesson</a>
+          </section>
+          <section class="hero-col"><img class="hero-image" src="../assets/images/course-image.png" /></section>
         </div>
+      </div>
     </div>
 </header>
 
-{{!-- TODO update data fields --}}
-{{#each course}}
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body" id="course-section">
-    <h5 class="card-title">{{courseTitle}}</h5>
-    <p class="card-text">{{courseDescription}}</p>
-    <a href="#" class="btn btn-primary">{{courseURL}}</a>
+  <div class="welcome">
+    <div class="container text-center py-3">
+      <h5 class="h5-hero-2">All Courses</h5>
+      <div class="container">
+        <div class="row">
+      {{!-- TODO update data fields --}}
+        {{#each courseCatalog}}
+          {{> course-tile}}
+        {{/each}}
+        </div>
+        </div>
+    </div>
   </div>
-</div>
-{{/each}}

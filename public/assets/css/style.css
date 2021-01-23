@@ -7,6 +7,15 @@
 	color: white;
 } */
 
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
 .header-bg {
 	background-image: url("../images/hero-bg.png");
 	background-size: cover;
@@ -47,6 +56,15 @@
 }
 .hero-col {
 	flex: 1;
+}
+
+.flex-course{
+	display: flex;
+	justify-content: space-between;
+}
+.flex-course-col {
+	width: 24%;
+	margin: 5px;
 }
 .h1-hero {
 	padding-top: 20px;
@@ -96,6 +114,11 @@
 	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
 	position: relative;
 }
+
+.footer {
+	flex-shrink: 0;
+}
+
 /*---Media Queries --*/
 @media (max-width: 992px) {
 }
@@ -110,6 +133,9 @@
 		border-radius: 0;
 		box-shadow: none;
 	}
+	.flex-course-col {
+	width: 100%;
+}
 }
 @media (max-width: 576px) {
 }

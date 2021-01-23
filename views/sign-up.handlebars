@@ -1,5 +1,5 @@
 <form class="form-signin container form-padding card-style">
-    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create an Account</h1>
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create your One World Academy account</h1>
 
     {{!-- First name user input --}}
     <label for="firstName" class="sr-only">First Name</label>
@@ -18,14 +18,19 @@
     <input type="password" id="inputPassword" name="password" class="form-control my-1" placeholder="Password" required/>
     
     {{!-- Social media user input --}}
+    {{!-- TODO remove social media? --}}
     <label for="socialMedia" class="sr-only">Social Media</label>
     <input type="text" id="inputSocialMedia" name="socialMedia" class="form-control my-1" placeholder="Social Media" required/>
 
     <button class="btn btn-lg btn-warning btn-block text-light" type="submit">
         Create Account
     </button>
-    
-    <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+
+    <p class="mt-3 text-muted text-center">Already have an account? <a href="/sign-in">Sign in</a></p>
+
+    {{!-- <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p> --}}
 </form>
 
 <script src="./assets/js/sign-up.js"></script>
+
+{{> footer}}

@@ -32,6 +32,9 @@ No installation required; users can create an account on One World Academy and u
 * [Bootstrap](https://getbootstrap.com/)
 * [Quiz](https://quizapi.io/)
 
+### Images
+<div>Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

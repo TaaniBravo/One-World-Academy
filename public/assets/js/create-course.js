@@ -2,7 +2,6 @@ $(document).ready(() => {
   $("#create-course-btn").on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log("Check");
     const newCourse = {
       title: $(".courseTitle")
         .val()
@@ -12,8 +11,6 @@ $(document).ready(() => {
         .val()
         .trim()
     };
-
-    console.log(newCourse);
 
     // Send the POST request.
     $.ajax("/api/course", {
