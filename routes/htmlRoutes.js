@@ -101,6 +101,19 @@ module.exports = app => {
   // Route for the user's profile.
   app.get("/user", isAuthenticated, async (req, res) => {
     const userData = await db.User.findOne({
+      where: { id: req.user.id },
+      insert: {
+        model: db.Course
+      }
+    });
+
+    console.log(userData);
+
+    res.render("user", userData);
+  });
+
+  app.get("/edit-user", isAuthenticated, async (req, res) => {
+    const userData = await db.User.findOne({
       where: { id: req.user.id }
     });
 
