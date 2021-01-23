@@ -14,7 +14,7 @@ module.exports = app => {
       courseTitle: "Javascript",
       courseDescription:
         "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "javascript",
+      id: 1,
       imageURL:
         "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
     },
@@ -22,7 +22,7 @@ module.exports = app => {
       courseTitle: "Node JS",
       courseDescription:
         "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "nodejs",
+        id: 2,
       imageURL:
         "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
     },
@@ -30,7 +30,7 @@ module.exports = app => {
       courseTitle: "React",
       courseDescription:
         "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "react",
+      id: 3,
       imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
     },
     {
@@ -55,6 +55,19 @@ module.exports = app => {
         "A 2 Month course on Node JS and Server Side Programming",
       courseURL: "react",
       imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
+    }
+  ];
+
+  const lessonObj = [
+    {
+      lessonTitle: "Node JS",
+      lecture:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      lessonTitle: "Node JS",
+      lecture:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ];
 
@@ -120,12 +133,12 @@ module.exports = app => {
   });
 
   // Route for viewing a single course.
-  app.get("/courses/:id", isAuthenticated, async (req, res) => {
+  app.get("/courses/:id", async (req, res) => {
     const courseData = await db.Course.findOne({
       where: { id: req.params.id }
     });
-
-    res.render("courses/:id", courseData);
+    console.log(lessonObj);
+    res.render("course", { lesson: lessonObj });
   });
 
   // Route for creating a course.
