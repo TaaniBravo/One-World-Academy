@@ -5,10 +5,10 @@ require("../config/passport");
 module.exports = app => {
   app.post("/api/create-course", async (req, res) => {
     await db.Course.create({
-      title: req.body.title,
-      category: req.body.category,
-      banner: req.body.banner,
-      courseBio: req.body.courseBio,
+      title: req.body.courseTitle,
+      category: req.body.courseCategory,
+      courseImage: req.body.courseImage,
+      courseDescription: req.body.courseDescription,
       userId: req.user.id
     });
 
