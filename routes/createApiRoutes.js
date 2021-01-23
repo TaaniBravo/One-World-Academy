@@ -3,8 +3,8 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/create-course", async (req, res) => {
-    await db.Course.create({
+  app.post("/api/courses", async (req, res) => {
+    const newCourse = await db.Course.create({
       title: req.body.courseTitle,
       category: req.body.courseCategory,
       courseImage: req.body.courseImage,
@@ -19,27 +19,27 @@ module.exports = app => {
     }
   });
 
-  app.post("/api/create-lesson", async (req, res) => {
-    await db.Lesson.create({
+  app.post("/api/lessons", async (req, res) => {
+    const newLesson = await db.Lesson.create({
       lessonTitle: req.body.lessonTitle,
       lecture: req.body.lecture,
       courseId: req.params.courseId
     });
 
     try {
-      res.redirect(307, "/api/lessons");
+      res.json(newLesson);
     } catch (error) {
       res.status(401).json(error);
     }
   });
 
-  app.post("/api/create-quiz", async (req, res) => {
-    await db.Quiz.create({
+  app.post("/api/quizzes", async (req, res) => {
+    const newQuiz = await db.Quiz.create({
       quizTitle: req.body.quizTitle,
       lessonId: req.params.lessonId
     });
 
-    await db.QuizQuestions.create({
+    const newQuestions = await db.QuizQuestions.create({
       question: req.body.question,
       choiceOne: req.body.choiceOne,
       choiceTwo: req.body.choiceTwo,
@@ -50,7 +50,8 @@ module.exports = app => {
     });
 
     try {
-      res.redirect(307, "/api/quizzes");
+      res.json(newQuiz);
+      res.json(newQuestions);
     } catch (error) {
       res.status(401).json(error);
     }
