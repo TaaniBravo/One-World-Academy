@@ -5,22 +5,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    //   author: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false
-    //   },
-
     category: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    banner: {
+    courseImage: {
       type: DataTypes.STRING,
       allowNull: true
     },
 
-    courseBio: {
+    courseDescription: {
       type: DataTypes.TEXT,
       allowNull: false
     }
