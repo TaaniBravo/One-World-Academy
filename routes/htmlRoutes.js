@@ -9,74 +9,75 @@ module.exports = app => {
 
   //For testing purposes
 
-  const course = [
-    {
-      courseTitle: "Javascript",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "javascript",
-      imageURL:
-        "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
-    },
-    {
-      courseTitle: "Node JS",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "nodejs",
-      imageURL:
-        "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
-    },
-    {
-      courseTitle: "React",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "react",
-      imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
-    },
-    {
-      courseTitle: "Javascript",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "javascript",
-      imageURL:
-        "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
-    },
-    {
-      courseTitle: "Node JS",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "nodejs",
-      imageURL:
-        "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
-    },
-    {
-      courseTitle: "React",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "react",
-      imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
-    }
-  ];
+  // const course = [
+  //   {
+  //     courseTitle: "Javascript",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "javascript",
+  //     imageURL:
+  //       "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
+  //   },
+  //   {
+  //     courseTitle: "Node JS",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "nodejs",
+  //     imageURL:
+  //       "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
+  //   },
+  //   {
+  //     courseTitle: "React",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "react",
+  //     imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
+  //   },
+  //   {
+  //     courseTitle: "Javascript",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "javascript",
+  //     imageURL:
+  //       "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
+  //   },
+  //   {
+  //     courseTitle: "Node JS",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "nodejs",
+  //     imageURL:
+  //       "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
+  //   },
+  //   {
+  //     courseTitle: "React",
+  //     courseDescription:
+  //       "A 2 Month course on Node JS and Server Side Programming",
+  //     courseURL: "react",
+  //     imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
+  //   }
+  // ];
+
   app.get("/course-catalog", (req, res) => {
     res.render("course-catalog", { courseCatalog: course });
   });
 
   // Displays a single course, or returns false
-  app.get("/courses/:course", (req, res) => {
-    const singleCourse = req.params.course;
+  // app.get("/courses/:course", (req, res) => {
+  //   const singleCourse = req.params.course;
 
-    console.log(singleCourse);
+  //   console.log(singleCourse);
 
-    for (let i = 0; i < course.length; i++) {
-      if (singleCourse === course[i].courseURL) {
-        return res.render("course-catalog", {
-          courseCatalog: course[i]
-        });
-      }
-    }
+  //   for (let i = 0; i < course.length; i++) {
+  //     if (singleCourse === course[i].courseURL) {
+  //       return res.render("course-catalog", {
+  //         courseCatalog: course[i]
+  //       });
+  //     }
+  //   }
 
-    return res.json(false);
-  });
+  //   return res.json(false);
+  // });
 
   app.get("/about-us", (req, res) => {
     res.render("about-us");
