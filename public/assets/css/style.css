@@ -118,6 +118,9 @@
 		border-radius: 0;
 		box-shadow: none;
 	}
+	.flex-course-col {
+	width: 100%;
+}
 }
 @media (max-width: 576px) {
 }
