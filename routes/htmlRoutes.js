@@ -107,6 +107,14 @@ module.exports = app => {
     res.render("user", userData);
   });
 
+  app.get("/edit-user", isAuthenticated, async (req, res) => {
+    const userData = await db.User.findOne({
+      where: { id: req.user.id }
+    });
+
+    res.render("user", userData);
+  });
+
   // Route for viewing a single course.
   app.get("/courses/:id", isAuthenticated, async (req, res) => {
     const courseData = await db.Course.findOne({
