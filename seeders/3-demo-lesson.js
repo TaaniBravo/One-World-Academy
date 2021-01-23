@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Lessons", [
       {
         lessonTitle: "Variables",
@@ -22,7 +22,7 @@ module.exports = {
     ]);
   },
 
-  down: async (queryInterface, Sequelize) => {
+  down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete("Lessons", null, {});
   }
 };
