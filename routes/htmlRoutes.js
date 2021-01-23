@@ -132,15 +132,6 @@ module.exports = app => {
   // });
 
   // Route for viewing a single course.
-<<<<<<< HEAD
-  // app.get("/courses/:id", isAuthenticated, async (req, res) => {
-  //   const courseData = await db.Course.findOne({
-  //     where: { id: req.params.id }
-  //   });
-
-  //   res.render("courses/:id", courseData);
-  // });
-=======
   app.get("/courses/:id", async (req, res) => {
     const courseData = await db.Course.findOne({
       where: { id: req.params.id }
@@ -148,7 +139,6 @@ module.exports = app => {
     console.log(lessonObj);
     res.render("course", { lesson: lessonObj });
   });
->>>>>>> 7f2ec1266b1c5c08ea2bc14f42824bcda7dccdb3
 
   // Route for creating a course.
   app.get("/create-course", isAuthenticated, (req, res) => {
