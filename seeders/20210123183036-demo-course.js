@@ -10,6 +10,15 @@ module.exports = {
         courseBio: "This is a course for the beginners with JS language.",
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+
+      {
+        title: "CSS Entry Level",
+        category: "CSS",
+        banner: "Free Course",
+        courseBio: "This is a course for the beginners with CSS language.",
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ]);
   },
