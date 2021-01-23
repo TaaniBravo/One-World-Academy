@@ -22,7 +22,7 @@ module.exports = app => {
       courseTitle: "Node JS",
       courseDescription:
         "A 2 Month course on Node JS and Server Side Programming",
-        id: 2,
+      id: 2,
       imageURL:
         "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
     },
