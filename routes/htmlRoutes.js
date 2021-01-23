@@ -36,7 +36,7 @@ module.exports = app => {
       where: { id: req.user.id }
     });
 
-    res.render("/user", userData);
+    res.render("user", userData);
   });
 
   // Route for viewing a single course.
@@ -45,7 +45,7 @@ module.exports = app => {
       where: { id: req.params.id }
     });
 
-    res.render("/courses/:id", courseData);
+    res.render("courses/:id", courseData);
   });
 
   // Route for creating a course.
