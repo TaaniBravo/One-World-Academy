@@ -7,22 +7,24 @@
 
     <div class="form-group">
         <p for="category" class="text-left">Select Course:</p>
-        <select class="form-control" id="course" placeholder="Select Course">
+        <select class="form-control" id="course" placeholder="Select Course" name="course">
             {{> course-selection}}
         </select>
     </div>
 
     {{!-- Lesson title user input --}}
     <label for="lessonTitle" class="sr-only">Lesson Title</label>
-    <input type="text" id="lessonTitle" name="lessonTitle" class="form-control my-1" placeholder="lesson Title" required autofocus/>
+    <input type="text" id="lessonTitle" name="lessonTitle" class="form-control my-1" placeholder="Lesson Title" required autofocus/>
     
     {{!-- Lesson description user input --}}
-    <label for="lessonDescription" class="sr-only">Lesson Description</label>
-    <textarea type="text" id="lessonDescription" name="lessonDescription" class="form-control my-1" placeholder="lesson Description" required autofocus rows="5"></textarea>
+    <label for="lecture" class="sr-only">Lesson Description</label>
+    <input type="text" id="lessonDescription" name="lecture" class="form-control my-1" placeholder="Lesson Description" required autofocus rows="5"/>
     
-    <button class="btn btn-lg btn-warning btn-block text-light pull-right" type="submit">
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="create-lesson-btn" type="submit">
         Create a Lesson
     </button>
 
     <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
 </form>
+
+<script src="./assets/js/create-lesson.js"></script>

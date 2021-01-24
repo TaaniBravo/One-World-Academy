@@ -35,25 +35,28 @@ module.exports = app => {
     }
   });
 
-  // app.post("/api/courses", (req, res) => {
-  //   res.json({
-  //     title: req.body.courseTitle,
-  //     category: req.body.courseCategory,
-  //     courseImage: req.body.courseImage,
-  //     courseDescription: req.body.courseDescription,
-  //     userId: req.user.id
-  //   });
-  // });
-
-  app.post("/api/lessons", async (req, res) => {
-    const newLesson = await db.Lesson.create({
-      lessonTitle: req.body.lessonTitle,
-      lecture: req.body.lecture,
-      courseId: req.params.courseId
-    });
+  app.get("/api/lessons", async (req, res) => {
+    const lessons = await db.Lesson.findAll({});
 
     try {
-      res.json(newLesson);
+      res.json(lessons);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.post("/api/lessons", async (req, res) => {
+    const { CourseId, lessonTitle, lecture } = req.body;
+    const newLesson = await db.Lesson.create({
+      CourseId,
+      lessonTitle,
+      lecture
+    });
+
+    // console.log(newCourse);
+
+    try {
+      res.send(newLesson);
     } catch (error) {
       res.status(401).json(error);
     }

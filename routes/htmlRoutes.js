@@ -135,8 +135,21 @@ module.exports = app => {
   });
 
   // Route for creating a lesson.
-  app.get("/create-lesson", isAuthenticated, (req, res) => {
-    res.render("create-lesson");
+  app.get("/create-lesson", isAuthenticated, async (req, res) => {
+    const courseArray = await db.Course.findAll({
+      where: { userId: req.user.id },
+      raw: true
+    });
+
+    console.log(courseArray);
+
+    if (courseArray.length < 1 || courseArray === undefined) {
+      res.render("create-course");
+    } else {
+      res.render("create-lesson", {
+        course: courseArray
+      });
+    }
   });
 
   // Route for creating a lesson.
