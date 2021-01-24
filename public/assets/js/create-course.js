@@ -8,10 +8,21 @@ $(document).ready(() => {
         .trim(),
       category: $("#courseCategory").val(),
       courseImage: $("#courseImage").val(),
-      description: $(".courseBio")
+      courseDescription: $(".courseBio")
         .val()
-        .trim()
+        .trim(),
+      UserId: req.user.id
     };
+
+    if (
+      !newCourse.title ||
+      !newCourse.category ||
+      !newCourse.courseImage ||
+      !newCourse.courseDescription ||
+      !newCourse.UserId
+    ) {
+      return;
+    }
 
     // Send the POST request.
     $.ajax("/api/course", {
@@ -20,7 +31,7 @@ $(document).ready(() => {
     }).then(() => {
       console.log("created new course");
       // Reload the page to get the updated list
-      //   location.replace(/course/:newCourse.title)
+      location.replace(`/course/${req.params.id}`);
     });
   });
 });

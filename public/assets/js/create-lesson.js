@@ -4,14 +4,18 @@ $(document).ready(() => {
     event.preventDefault();
     console.log("Check");
     const newLesson = {
-      course_id: $("#course")
+      CourseId: $("#course")
         .val()
         .trim(),
-      title: $("#lessonTitle").val(),
+      lessonTitle: $("#lessonTitle").val(),
       lecture: $("#lessonDescription")
         .val()
         .trim()
     };
+
+    if (!newLesson.CourseId || !newLesson.lessonTitle || !newLesson.lecture) {
+      return;
+    }
 
     console.log(newLesson);
 
@@ -22,7 +26,7 @@ $(document).ready(() => {
     }).then(() => {
       console.log("created new lesson");
       // Reload the page to get the updated list
-      //   location.replace(/course/:newCourse.title)
+      location.replace("/course/:newLesson.CourseId");
     });
   });
 });
