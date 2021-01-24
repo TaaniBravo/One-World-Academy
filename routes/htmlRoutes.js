@@ -71,8 +71,12 @@ module.exports = app => {
     }
   ];
 
-  app.get("/course-catalog", (req, res) => {
-    res.render("course-catalog", { courseCatalog: course });
+  app.get("/course-catalog", async (req, res) => {
+    const courses = await db.Course.findAll({
+      raw: true
+    });
+
+    res.render("course-catalog", { courseCatalog: courses });
   });
 
   app.get("/about-us", (req, res) => {
@@ -105,8 +109,6 @@ module.exports = app => {
       raw: true
     });
 
-    console.log(userData.dataValues);
-    console.log(courseArray);
     res.render("user", {
       user: userData.dataValues,
       course: courseArray
@@ -137,8 +139,21 @@ module.exports = app => {
   });
 
   // Route for creating a lesson.
-  app.get("/create-lesson", isAuthenticated, (req, res) => {
-    res.render("create-lesson");
+  app.get("/create-lesson", isAuthenticated, async (req, res) => {
+    const courseArray = await db.Course.findAll({
+      where: { userId: req.user.id },
+      raw: true
+    });
+
+    console.log(courseArray);
+
+    if (courseArray.length < 1 || courseArray === undefined) {
+      res.render("create-course");
+    } else {
+      res.render("create-lesson", {
+        course: courseArray
+      });
+    }
   });
 
   // Route for creating a lesson.

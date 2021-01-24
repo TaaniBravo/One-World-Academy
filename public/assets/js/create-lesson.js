@@ -1,28 +1,30 @@
 $(document).ready(() => {
-  $("#create-lesson-btn").on("submit", event => {
+  const $lessonForm = $("form");
+  const $courseId = $("#course");
+  const $lessonTitle = $("input#lessonTitle");
+  const $lecture = $("input#lessonDescription");
+
+  $lessonForm.on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log("Check");
+
     const newLesson = {
-      course_id: $("#course")
-        .val()
-        .trim(),
-      title: $("#lessonTitle").val(),
-      lecture: $("#lessonDescription")
-        .val()
-        .trim()
+      CourseId: $courseId.val(),
+      lessonTitle: $lessonTitle.val(),
+      lecture: $lecture.val()
     };
 
-    console.log(newLesson);
+    if (!newLesson.CourseId || !newLesson.lessonTitle || !newLesson.lecture) {
+      return;
+    }
 
     // Send the POST request.
-    $.ajax("/api/lesson", {
-      type: "POST",
-      data: newLesson
-    }).then(() => {
-      console.log("created new lesson");
-      // Reload the page to get the updated list
-      //   location.replace(/course/:newCourse.title)
-    });
+    createLesson(newLesson, $courseId.val());
   });
 });
+
+const createLesson = async (newLesson, courseId) => {
+  await $.post("/api/lessons", newLesson, () => {
+    window.location.replace(`/courses/${courseId}`);
+  });
+};

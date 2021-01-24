@@ -3,31 +3,60 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/courses", async (req, res) => {
-    const newCourse = await db.Course.create({
-      title: req.body.courseTitle,
-      category: req.body.courseCategory,
-      courseImage: req.body.courseImage,
-      courseDescription: req.body.courseDescription,
-      userId: req.user.id
+  // GET route for all courses.
+  app.get("/api/courses", async (req, res) => {
+    const courses = await db.Course.findAll({
+      where: { UserId: req.user.id }
     });
 
     try {
-      res.json(newCourse);
+      res.json(courses);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.post("/api/courses", async (req, res) => {
+    const { title, category, courseImage, courseDescription } = req.body;
+    const newCourse = await db.Course.create({
+      title,
+      category,
+      courseImage,
+      courseDescription,
+      UserId: req.user.id
+    });
+
+    console.log(newCourse);
+
+    try {
+      res.send(newCourse);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.get("/api/lessons", async (req, res) => {
+    const lessons = await db.Lesson.findAll({});
+
+    try {
+      res.json(lessons);
     } catch (error) {
       res.status(401).json(error);
     }
   });
 
   app.post("/api/lessons", async (req, res) => {
+    const { CourseId, lessonTitle, lecture } = req.body;
     const newLesson = await db.Lesson.create({
-      lessonTitle: req.body.lessonTitle,
-      lecture: req.body.lecture,
-      courseId: req.params.courseId
+      CourseId,
+      lessonTitle,
+      lecture
     });
 
+    // console.log(newCourse);
+
     try {
-      res.json(newLesson);
+      res.send(newLesson);
     } catch (error) {
       res.status(401).json(error);
     }
