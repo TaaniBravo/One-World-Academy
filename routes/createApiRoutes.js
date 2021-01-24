@@ -3,7 +3,7 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/courses", async (req, res) => {
+  app.post("/api/create-courses", async (req, res) => {
     const newCourse = await db.Course.create({
       title: req.body.courseTitle,
       category: req.body.courseCategory,
@@ -12,11 +12,23 @@ module.exports = app => {
       userId: req.user.id
     });
 
+    console.log(newCourse);
+
     try {
-      res.json(newCourse);
+      res.redirect(307, "/api/courses");
     } catch (error) {
       res.status(401).json(error);
     }
+  });
+
+  app.post("/api/courses", async (req, res) => {
+    res.json({
+      title: req.body.courseTitle,
+      category: req.body.courseCategory,
+      courseImage: req.body.courseImage,
+      courseDescription: req.body.courseDescription,
+      userId: req.user.id
+    });
   });
 
   app.post("/api/lessons", async (req, res) => {

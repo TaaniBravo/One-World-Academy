@@ -105,8 +105,6 @@ module.exports = app => {
       raw: true
     });
 
-    console.log(userData.dataValues);
-    console.log(courseArray);
     res.render("user", {
       user: userData.dataValues,
       course: courseArray
