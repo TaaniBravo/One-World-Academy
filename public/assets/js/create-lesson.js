@@ -1,11 +1,12 @@
 $(document).ready(() => {
+  const $lessonForm = $("form");
   const $courseId = $("#course");
-  const $lessonTitle = $("input#LessonTitle");
+  const $lessonTitle = $("input#lessonTitle");
   const $lecture = $("input#lessonDescription");
 
   console.log('hello')
 
-  $("form").on("submit", event => {
+  $lessonForm.on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -19,15 +20,13 @@ $(document).ready(() => {
       return;
     }
 
-    console.log(newLesson);
-
     // Send the POST request.
-    // createLesson(newLesson);
+    createLesson(newLesson, $courseId.val());
   });
 });
 
-const createLesson = async newLesson => {
+const createLesson = async (newLesson, courseId) => {
   await $.post("/api/lessons", newLesson, () => {
-    window.location.replace(`/course/${$courseId.val()}`);
+    window.location.replace(`/courses/${courseId}`);
   });
 };
