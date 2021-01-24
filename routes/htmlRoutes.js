@@ -125,9 +125,6 @@ module.exports = app => {
       raw: true
     });
 
-    console.log(courseData);
-    console.log(lessonData)
-
     res.render("course", {
       course: courseData,
       lesson: lessonData
