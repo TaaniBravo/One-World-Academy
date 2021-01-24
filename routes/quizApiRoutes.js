@@ -1,22 +1,48 @@
 const db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/quizzes", async (req, res) => {
-    const newQuiz = await db.Quiz.create({
-      quizTitle: req.body.quizTitle,
-      lessonId: req.params.lessonId
+  app.get("/api/quizzes", isAuthenticated, async (req, res) => {
+    const quizzes = await db.Quiz.findAll({
+      include: {
+        model: db.QuizQuestions
+      }
     });
 
+    try {
+      res.json(quizzes);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.post("/api/quizzes", async (req, res) => {
+    const { quizTitle, lessonId } = req.body;
+    const newQuiz = await db.Quiz.create({
+      quizTitle,
+      lessonId
+    });
+
+    const {
+      question,
+      choiceOne,
+      choiceTwo,
+      choiceThree,
+      choiceFour,
+      answer,
+      QuizId
+    } = req.body;
+
     const newQuestions = await db.QuizQuestions.create({
-      question: req.body.question,
-      choiceOne: req.body.choiceOne,
-      choiceTwo: req.body.choiceTwo,
-      choiceThree: req.body.choiceThree,
-      choiceFour: req.body.choiceFour,
-      answer: req.body.answer,
-      quizId: req.params.quizId
+      question,
+      choiceOne,
+      choiceTwo,
+      choiceThree,
+      choiceFour,
+      answer,
+      QuizId
     });
 
     try {
