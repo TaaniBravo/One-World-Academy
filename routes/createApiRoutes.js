@@ -3,33 +3,47 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  app.post("/api/create-courses", async (req, res) => {
-    const newCourse = await db.Course.create({
-      title: req.body.courseTitle,
-      category: req.body.courseCategory,
-      courseImage: req.body.courseImage,
-      courseDescription: req.body.courseDescription,
-      userId: req.user.id
+  // GET route for all courses.
+  app.get("/api/courses", async (req, res) => {
+    const courses = await db.Course.findAll({
+      where: { UserId: req.user.id }
     });
 
-    console.log(newCourse);
-
     try {
-      res.redirect(307, "/api/courses");
+      res.json(courses);
     } catch (error) {
       res.status(401).json(error);
     }
   });
 
   app.post("/api/courses", async (req, res) => {
-    res.json({
-      title: req.body.courseTitle,
-      category: req.body.courseCategory,
-      courseImage: req.body.courseImage,
-      courseDescription: req.body.courseDescription,
-      userId: req.user.id
+    const { title, category, courseImage, courseDescription } = req.body;
+    const newCourse = await db.Course.create({
+      title,
+      category,
+      courseImage,
+      courseDescription,
+      UserId: req.user.id
     });
+
+    console.log(newCourse);
+
+    try {
+      res.send(newCourse);
+    } catch (error) {
+      res.status(401).json(error);
+    }
   });
+
+  // app.post("/api/courses", (req, res) => {
+  //   res.json({
+  //     title: req.body.courseTitle,
+  //     category: req.body.courseCategory,
+  //     courseImage: req.body.courseImage,
+  //     courseDescription: req.body.courseDescription,
+  //     userId: req.user.id
+  //   });
+  // });
 
   app.post("/api/lessons", async (req, res) => {
     const newLesson = await db.Lesson.create({
