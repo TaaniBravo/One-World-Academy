@@ -117,15 +117,16 @@ module.exports = app => {
       where: { id: req.user.id }
     });
 
-    const courseData = await db.Course.findAll({
-      where: { userId: req.user.id }
+    const courseArray = await db.Course.findAll({
+      where: { userId: req.user.id },
+      raw: true
     });
 
     console.log(userData.dataValues);
-    console.log(courseData);
+    console.log(courseArray);
     res.render("user", {
       user: userData.dataValues,
-      course: courseData
+      course: courseArray
     });
   });
 
