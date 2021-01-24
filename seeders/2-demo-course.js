@@ -7,7 +7,8 @@ module.exports = {
         id: 1,
         title: "JS Entry Level",
         category: "JS",
-        courseImage: null,
+        courseImage:
+          "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg",
         courseDescription:
           "This is a course for the beginners with JS language.",
         createdAt: new Date(),
@@ -19,7 +20,8 @@ module.exports = {
         id: 2,
         title: "CSS Entry Level",
         category: "CSS",
-        courseImage: null,
+        courseImage:
+          "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png",
         courseDescription:
           "This is a course for the beginners with CSS language.",
         createdAt: new Date(),

@@ -6,5 +6,5 @@ module.exports = (req, res, next) => {
   }
 
   // IF the user is NOT logged in, redirect them to the login page.
-  return res.redirect("/login");
+  return res.redirect("/sign-in");
 };

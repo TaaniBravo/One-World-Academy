@@ -75,23 +75,6 @@ module.exports = app => {
     res.render("course-catalog", { courseCatalog: course });
   });
 
-  // Displays a single course, or returns false
-  // app.get("/courses/:course", (req, res) => {
-  //   const singleCourse = req.params.course;
-
-  //   console.log(singleCourse);
-
-  //   for (let i = 0; i < course.length; i++) {
-  //     if (singleCourse === course[i].courseURL) {
-  //       return res.render("course-catalog", {
-  //         courseCatalog: course[i]
-  //       });
-  //     }
-  //   }
-
-  //   return res.json(false);
-  // });
-
   app.get("/about-us", (req, res) => {
     res.render("about-us");
   });
@@ -130,20 +113,22 @@ module.exports = app => {
     });
   });
 
-  // app.get("/edit-user", isAuthenticated, async (req, res) => {
-  //   const userData = await db.User.findOne({
-  //     where: { id: req.user.id }
-  //   });
-  //   res.render("user", userData.dataValues);
-  // });
-
   // Route for viewing a single course.
   app.get("/courses/:id", async (req, res) => {
     const courseData = await db.Course.findOne({
-      where: { id: req.params.id }
+      where: { id: req.params.id },
+      raw: true
     });
-    console.log(lessonObj);
-    res.render("course", { lesson: lessonObj });
+
+    const lessonData = await db.Lesson.findAll({
+      where: { CourseId: req.params.id },
+      raw: true
+    });
+
+    res.render("course", {
+      course: courseData,
+      lesson: lessonData
+    });
   });
 
   // Route for creating a course.
