@@ -27,7 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/userApiRoutes")(app);
-require("./routes/createApiRoutes")(app);
+require("./routes/courseApiRoutes")(app);
+require("./routes/lessonApiRoutes")(app);
+require("./routes/quizApiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 db.sequelize.sync().then(() => {
