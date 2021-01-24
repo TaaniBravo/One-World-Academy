@@ -4,8 +4,6 @@ $(document).ready(() => {
   const $lessonTitle = $("input#lessonTitle");
   const $lecture = $("input#lessonDescription");
 
-  console.log('hello')
-
   $lessonForm.on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
