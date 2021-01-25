@@ -1,3 +1,4 @@
+// Creating the Course Model
 module.exports = function(sequelize, DataTypes) {
   const Course = sequelize.define("Course", {
     title: {
@@ -22,10 +23,12 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Course.associate = function(models) {
+    // A course to have many lesson
     Course.hasMany(models.Lesson, {
       onDelete: "cascade"
     });
 
+    // A user can create many courses
     Course.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

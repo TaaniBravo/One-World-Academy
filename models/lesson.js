@@ -1,3 +1,4 @@
+// Creating the Lesson model
 module.exports = function(sequelize, DataTypes) {
   const Lesson = sequelize.define("Lesson", {
     lessonTitle: {
@@ -12,10 +13,12 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Lesson.associate = function(models) {
+    // A lesson to have many quizzes
     Lesson.hasMany(models.Quiz, {
       onDelete: "cascade"
     });
 
+    // A course can include many lessons
     Lesson.belongsTo(models.Course, {
       foreignKey: {
         allowNull: false
