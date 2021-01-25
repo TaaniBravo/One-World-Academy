@@ -4,8 +4,10 @@ const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
+  // Routes for the quizzes themselves.
   app.get("/api/quizzes", isAuthenticated, async (req, res) => {
     const quizzes = await db.Quiz.findAll({
+      raw: true,
       include: {
         model: db.QuizQuestions
       }
@@ -25,6 +27,30 @@ module.exports = app => {
       lessonId
     });
 
+    try {
+      res.send(newQuiz);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  // Routes for the questions.
+  app.get("/api/questions", isAuthenticated, async (req, res) => {
+    const questions = await db.Quiz.findAll({
+      raw: true,
+      include: {
+        model: db.QuizQuestions
+      }
+    });
+
+    try {
+      res.send(questions);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.post("/api/questions", async (req, res) => {
     const {
       question,
       choiceOne,
@@ -46,8 +72,7 @@ module.exports = app => {
     });
 
     try {
-      res.json(newQuiz);
-      res.json(newQuestions);
+      res.send(newQuestions);
     } catch (error) {
       res.status(401).json(error);
     }
