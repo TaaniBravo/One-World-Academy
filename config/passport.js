@@ -4,7 +4,7 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const db = require("../models");
 
-// Local Stategy is going to allow us to use a local login rather than eg. Google or Facebook.
+// Local Strategy is going to allow us to use a local login rather than eg. Google or Facebook.
 passport.use(
   new LocalStrategy(
     {
@@ -23,7 +23,7 @@ passport.use(
           message: "Incorrect email."
         });
       }
-      // IF ther is a user with the given email, but the password the user gives us is incorrect.
+      // IF there is a user with the given email, but the password the user gives us is incorrect.
       else if (!dbUser.validPassword(password)) {
         return done(null, false, {
           message: "Incorrect password."
