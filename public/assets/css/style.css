@@ -2,10 +2,21 @@
 
 /* BG Nav Image */
 
-/* .nav-text-color {
-	font-weight: 300;
-	color: white;
-} */
+body {
+  /* Set "my-sec-counter" to 0 */
+  counter-reset: my-sec-counter;
+}
+
+h4::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter;
+  content: "Lesson " counter(my-sec-counter) ": ";
+  background-color: #a7cf02;
+  border-radius: 100px;
+  margin-right:5px;
+  padding: 5px 10px;
+  color: white;
+}
 
 html, body {
 	height: 100%;
@@ -113,6 +124,17 @@ body {
 	border-radius: 10px;
 	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
 	position: relative;
+}
+
+.lesson-header {
+	border-bottom: 1px dashed #a7cf02;
+	margin-bottom: 20px;
+}
+
+.lesson-body {
+	background-color: #fafafa;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .footer {

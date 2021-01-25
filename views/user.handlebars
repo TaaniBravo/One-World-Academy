@@ -2,41 +2,29 @@
     <div class="container header-bg">
         {{> nav}}
         <div class="container">
-        <div class="flex-grid card-style">
-          <section class="hero-col">
-            <h1 class="h1-hero">User Profile</h1>
-                <div class="col ">
-                  <img src="{{user.profilePic}}" style="width: 32px;">
-                </div>
+        <div class="flex-grid card-style p-3">
+          <section class="hero-col row">
+                  <img src="{{user.profilePic}}" class="col-12 col-sm-6"/>
           </section>
-            <div class="row">
           <section class="hero-col">
-                <div class="col">
-                  <p class="fs-2">{{user.firstName}} {{user.lastName}}</p>
+            <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
                   <p><span class="fw-bold">Email: </span>{{user.email}}</p>
                   <p><span class="fw-bold">Social Media: </span> {{bio}}</p>
-                </div>
-              </div>
-              </section>
+          </section>
         </div>
       </div>
     </div>
 </header>
 
-<div class="container">
+<div class="container p-5">
   <div class="row">
     <h2>User Profile</h2>
   </div>
-  
+<div class="row">
+  {{> course-tile}}
+</div>
 </div>
 
-<div class="container">
-  
 
-</div>
-
-<div class="container">
-{{> course-tile}}
-</div>
 
 <script src="./assets/js/userpage.js"></script>
