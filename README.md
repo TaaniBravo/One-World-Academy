@@ -20,20 +20,60 @@ SO THAT I can achieve my educational aspirations.
 * [License](#license)
 
 ## Installation
-No installation required; users can create an account on One World Academy and use their email and password to login.
+
+No installation required for end-user; users can create an account on One World Academy and use their email and password to login.
 
 ## Usage
 
+### Deployed application
+[Add URL here]()
+
+### User experience
+Users of One World Academy are able to
+* Create a new account and sign up, if a new user, using their first name, last name, email, and password
+* Sign in successfully using their email and password, if a returning user
+* Create a new course
+* Create a new lesson(s), associated with a specific course
+* View courses all users have created on the Course Catalog page
+* View a specific course and all associated lessons on a single course page
+* View all courses they have created on the User page
+
 ## Tests
+
+### Project criteria
+* Uses a Node and Express server
+* Uses Handlebars.js as the template engine
+* Backed by a MySQL database with a Sequelize ORM
+* Utilizes both GET and POST routes for retrieving and adding new data
+* Deployed using Heroku (with data)
+* Utilizes at least one new library, package, or technology: Passport
+* A polished front end/UI
+* A folder structure that meets the MVC paradigm
+* Meets good quality coding standards (indentation, scoping, naming)
+* Protects API keys in Node with environment variables
 
 ## Credits
 
 ### Technologies used
+
+* [Heroku](https://www.heroku.com/)
+* [jQuery](https://jquery.com/)
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [Handlebars](https://handlebarsjs.com/)
+* [Sequelize](https://sequelize.org/)
+* [Passport](http://www.passportjs.org/)
+* [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
+* [MySQL2](https://www.npmjs.com/package/mysql2)
+
+* [Font Awesome](https://fontawesome.com/)
 * [Bootstrap](https://getbootstrap.com/)
+
 * [Quiz](https://quizapi.io/)
 
 ### Images
-<div>Icons made by <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 
 ## License
 
