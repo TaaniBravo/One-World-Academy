@@ -138,7 +138,8 @@ module.exports = app => {
     });
 
     res.render("update-lesson", {
-      course: courseArray, lesson: lessonData
+      course: courseArray,
+      lesson: lessonData
     });
   });
 };
