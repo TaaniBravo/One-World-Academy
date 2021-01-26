@@ -81,7 +81,7 @@ module.exports = app => {
   // DELETE Route for deleting a user's course.
   app.delete("/api/courses/:id", async (req, res) => {
     const deleteCourse = await db.Course.destroy({
-      where: { id: req.params.id }
+      where: { id: req.body.id }
     });
 
     try {
