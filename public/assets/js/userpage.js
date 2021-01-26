@@ -1,1 +1,4 @@
-$(document).ready(async () => {});
+// $(document).ready(async () => {
+//   const $navBarUL = $(".navbar-nav");
+
+// });
