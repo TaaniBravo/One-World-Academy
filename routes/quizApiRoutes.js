@@ -24,7 +24,8 @@ module.exports = app => {
     const { quizTitle, lessonId } = req.body;
     const newQuiz = await db.Quiz.create({
       quizTitle,
-      lessonId
+      lessonId,
+      UserId: req.user.id
     });
 
     try {
@@ -68,7 +69,8 @@ module.exports = app => {
       choiceThree,
       choiceFour,
       answer,
-      QuizId
+      QuizId,
+      UserId: req.user.id
     });
 
     try {

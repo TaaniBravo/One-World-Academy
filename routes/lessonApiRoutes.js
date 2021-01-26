@@ -16,7 +16,8 @@ module.exports = app => {
     const newLesson = await db.Lesson.create({
       CourseId,
       lessonTitle,
-      lecture
+      lecture,
+      UserId: req.user.id
     });
 
     // console.log(newCourse);
