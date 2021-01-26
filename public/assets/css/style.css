@@ -160,6 +160,7 @@ header {
 		margin-top: -200px;
 		color: #ffffff;
 		background-color: #ffffff;
+		background-image: url("../images/bg2.png");
 	}
 
 	.team-img {
@@ -167,9 +168,9 @@ header {
 		width: auto;
 	}
 
-	.border-bottom-style {
+	/* .border-bottom-style {
 		border-bottom: 1px dashed #a5a2f6;
-	}
+	} */
 
 .footer-section {
 	background-color: #020310;
