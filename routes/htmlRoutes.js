@@ -109,9 +109,15 @@ module.exports = app => {
       raw: true
     });
 
+    const lessonArray = await db.Lesson.findAll({
+      where: { userId: req.user.id },
+      raw: true
+    });
+
     res.render("user", {
       user: userData.dataValues,
-      course: courseArray
+      course: courseArray,
+      lesson: lessonArray
     });
   });
 

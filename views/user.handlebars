@@ -1,39 +1,44 @@
 <header class="header">
-    <div class="container header-bg">
-        {{> nav}}
-        <div class="container">
-        <div class="flex-grid">
-          <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style"/></section>
-          <section class="hero-col">
-            <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
-            <p><span class="fw-bold">Email: </span>{{user.email}}</p>
-            <p><span class="fw-bold">Social Media: </span> {{user.socialMedia}}</p>
-            <a class="btn btn-info col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
-            <a class="btn btn-danger col-12 col-sm-4 m-1" href="/logout">Logout</a>
-          </section>
-        </div>
+  <div class="container header-bg">
+    {{> nav}}
+    <div class="container">
+      <div class="flex-grid">
+        <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style" /></section>
+        <section class="hero-col">
+          <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
+          <p><span class="fw-bold">Email: </span>{{user.email}}</p>
+          <p><span class="fw-bold">Social Media: </span> {{user.socialMedia}}</p>
+          <a class="btn btn-info col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
+          <a class="btn btn-danger col-12 col-sm-4 m-1" href="/logout">Logout</a>
+        </section>
       </div>
     </div>
+  </div>
 </header>
 
 <div class="container p-5">
   <div class="row text-muted">
     <h2>User Courses</h2>
   </div>
-<div class="row px-3">
-  {{> course-tile}}
-</div>
+  <div class="row px-3">
+    {{> course-tile}}
+  </div>
 </div>
 
 <div class="container text-center p-5 py-3">
-    <div class="row text-muted">
-      <h2>User Lessons</h2>
-    </div>
-    <div class="container card-style p-3">
+  <div class="row text-muted">
+    <h2>User Lessons</h2>
+  </div>
+  <div class="container card-style p-3">
     <div class="column">
-    {{#each lesson}}
-        {{> lesson}}
-    {{/each}}
+      <ul>
+        {{#each lesson}}
+        <li class="m-1">{{lessonTitle}}
+          <button class="btn btn-info">Update Course</button>
+          <button class="btn btn-danger">Delete Course</button>
+        </li>
+        {{/each}}
+      </ul>
     </div>
   </div>
 </div>
