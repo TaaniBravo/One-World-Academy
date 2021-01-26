@@ -16,7 +16,12 @@ module.exports = app => {
 
   // POST Route for creating a user's course
   app.post("/api/courses", async (req, res) => {
-    const { title, category, courseImage, courseDescription } = req.body;
+    const { title, category, courseDescription } = req.body;
+    let { courseImage } = req.body;
+    if (courseImage === "" || null) {
+      courseImage =
+        "https://p7.hiclipart.com/preview/252/365/162/education-pompes-funebres-terrasson-computer-icons-course-learning-certificate-icon.jpg";
+    }
     const newCourse = await db.Course.create({
       title,
       category,
@@ -35,12 +40,14 @@ module.exports = app => {
   // PUT Route for updating the user's course.
   app.put("/api/courses/:id", async (req, res) => {
     const { title, category, courseImage, courseDescription } = req.body;
+
     const updatedInfo = {
       title,
       category,
       courseImage,
       courseDescription
     };
+
     const updatedCourse = await db.Course.update(updatedInfo, {
       where: { id: req.body.id }
     });

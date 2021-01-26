@@ -5,6 +5,11 @@ $(document).ready(() => {
   const lastNameInput = $("input#inputLastName");
   const emailInput = $("input#inputEmail");
   const passwordInput = $("input#inputPassword");
+  const bioInput = $("input#inputBio");
+  const profileInput = $("input#inputProfilePic");
+  const twitterInput = $("input#inputTwitter");
+  const linkedInInput = $("input#inputLinkedIn");
+  const gitHubInput = $("input#inputGitHub");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -13,7 +18,10 @@ $(document).ready(() => {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       firstName: firstNameInput.val().trim(),
-      lastName: lastNameInput.val().trim()
+      lastName: lastNameInput.val().trim(),
+      twitterURL: twitterInput.val().trim(),
+      linkedinURL: linkedInInput.val().trim(),
+      githubURL: gitHubInput.val().trim()
     };
 
     if (
@@ -25,25 +33,15 @@ $(document).ready(() => {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(
-      userData.email,
-      userData.password,
-      userData.firstName,
-      userData.lastName
-    );
+    signUpUser(userData);
     emailInput.val("");
     passwordInput.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  const signUpUser = async (email, password, firstName, lastName) => {
-    await $.post("/api/sign-up", {
-      email: email,
-      password: password,
-      firstName: firstName,
-      lastName: lastName
-    });
+  const signUpUser = async userData => {
+    await $.post("/api/sign-up", userData);
     try {
       window.location.replace("/user");
       // If there's an error, log the error
