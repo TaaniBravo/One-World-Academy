@@ -14,6 +14,19 @@ module.exports = app => {
     }
   });
 
+  app.get("/api/lessons/:id", async (req, res) => {
+    const { id } = req.params;
+    const lessons = await db.Lesson.findOne({
+      where: { id }
+    });
+
+    try {
+      res.json(lessons);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
   // POST Route for create a user's lesson.
   app.post("/api/lessons", async (req, res) => {
     const { CourseId, lessonTitle, lecture } = req.body;
@@ -32,15 +45,15 @@ module.exports = app => {
   });
 
   // PUT Route for updating the user's lesson.
-  app.put("/api/lessons/:id", async (req, res) => {
-    const { CourseId, lessonTitle, lecture } = req.body;
+  app.put("/api/lessons", async (req, res) => {
+    const { id, CourseId, lessonTitle, lecture } = req.body;
     const updatedInfo = {
       CourseId,
       lessonTitle,
       lecture
     };
-    const updatedLesson = await db.Lesson.create(updatedInfo, {
-      where: { id: req.params.id }
+    const updatedLesson = await db.Lesson.update(updatedInfo, {
+      where: { id }
     });
 
     try {

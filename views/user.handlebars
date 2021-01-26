@@ -34,8 +34,8 @@
       <ul>
         {{#each lesson}}
         <li class="m-1">{{lessonTitle}}
-          <button class="btn btn-info">Update Course</button>
-          <button class="btn btn-danger">Delete Course</button>
+          <a href="/update-lesson/{{id}}"><button class="btn btn-info" >Update Lesson</button></a>
+          <a href="/api/lessons/{{id}}"><button class="btn btn-danger">Delete Lesson</button></a>
         </li>
         {{/each}}
       </ul>

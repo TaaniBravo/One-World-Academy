@@ -123,7 +123,22 @@ module.exports = app => {
   });
 
   // Route for updating a lesson.
-  app.get("/update-lesson", isAuthenticated, (req, res) => {
-    res.render("update-lesson");
+  app.get("/update-lesson/:id", isAuthenticated, async (req, res) => {
+    const { id } = req.params;
+    const courseArray = await db.Course.findAll({
+      where: { userId: req.user.id },
+      raw: true
+    });
+    const lessonData = await db.Lesson.findOne({
+      where: {
+        id,
+        UserId: req.user.id
+      },
+      raw: true
+    });
+
+    res.render("update-lesson", {
+      course: courseArray, lesson: lessonData
+    });
   });
 };
