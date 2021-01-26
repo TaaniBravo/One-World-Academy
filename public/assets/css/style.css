@@ -168,6 +168,13 @@ header {
 		width: auto;
 	}
 
+	.profile-pic {
+		color: white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #a7cf02;
+	}
+
 	/* .border-bottom-style {
 		border-bottom: 1px dashed #a5a2f6;
 	} */
