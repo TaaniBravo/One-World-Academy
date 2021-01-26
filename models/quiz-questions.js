@@ -37,6 +37,12 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+
+    QuizQuestions.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return QuizQuestions;
