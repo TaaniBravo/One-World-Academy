@@ -14,6 +14,21 @@ module.exports = app => {
     }
   });
 
+  app.get("/api/courses/:id", async (req, res) => {
+    const course = await db.Course.findOne({
+      where: {
+        id: req.params.id
+      },
+      raw: true
+    });
+
+    try {
+      res.json(course);
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  });
+
   // POST Route for creating a user's course
   app.post("/api/courses", async (req, res) => {
     const { title, category, courseDescription } = req.body;
@@ -47,6 +62,10 @@ module.exports = app => {
       courseImage,
       courseDescription
     };
+
+    if (courseImage === "") {
+      delete updatedInfo.courseImage;
+    }
 
     const updatedCourse = await db.Course.update(updatedInfo, {
       where: { id: req.body.id }
