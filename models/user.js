@@ -13,6 +13,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
+    // The password cannot be null
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -32,21 +38,54 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue:
-        "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fmiddle%2F157-1578186_user-profile-default-image-png-clipart.png",
+        "https://www.pinclipart.com/picdir/big/164-1640714_user-symbol-interface-contact-phone-set-add-sign.png",
       validate: {
         isUrl: true
       }
     },
 
-    // The password cannot be null
-    password: {
+    twitterURL: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      validate: {
+        isUrl: true,
+        contains: "https://twitter.com/"
+      }
+    },
+
+    linkedinURL: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true,
+        contains: "https://linkedin.com/"
+      }
+    },
+
+    githubURL: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true,
+        contains: "https://github.com/"
+      }
     }
   });
 
   User.associate = function(models) {
     User.hasMany(models.Course, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.Lesson, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.QuizQuestions, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.Quiz, {
       onDelete: "cascade"
     });
 

@@ -1,3 +1,4 @@
+// Creating the Course Model
 module.exports = function(sequelize, DataTypes) {
   const Course = sequelize.define("Course", {
     title: {
@@ -12,7 +13,9 @@ module.exports = function(sequelize, DataTypes) {
 
     courseImage: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+      defaultValue:
+        "https://p7.hiclipart.com/preview/252/365/162/education-pompes-funebres-terrasson-computer-icons-course-learning-certificate-icon.jpg"
     },
 
     courseDescription: {
@@ -22,11 +25,20 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Course.associate = function(models) {
+    // A course to have many lesson
     Course.hasMany(models.Lesson, {
       onDelete: "cascade"
     });
 
+    // A user can create many courses
     Course.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    // A category can have many courses
+    Course.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
       }

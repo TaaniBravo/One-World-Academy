@@ -20,6 +20,12 @@ module.exports = function(sequelize, DataTypes) {
     Quiz.belongsToMany(models.User, {
       through: models.UserScores
     });
+
+    Quiz.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return Quiz;
