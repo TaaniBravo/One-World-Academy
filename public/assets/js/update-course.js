@@ -8,7 +8,7 @@ $(document).ready(() => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    const newCourse = {
+    const updatedCourse = {
       title: $title.val(),
       category: $category.val(),
       courseImage: $courseImage.val(),
@@ -16,20 +16,20 @@ $(document).ready(() => {
     };
 
     if (
-      !newCourse.title ||
-      !newCourse.category ||
-      !newCourse.courseDescription
+      !updatedCourse.title ||
+      !updatedCourse.category ||
+      !updatedCourse.courseDescription
     ) {
       return;
     }
 
     // Send the POST request.
-    createCourse(newCourse);
+    updateCourse(updatedCourse);
   });
 });
 
-const createCourse = async newCourse => {
-  await $.put("/api/courses", newCourse, () => {
+const createCourse = async updatedCourse => {
+  await $.put("/api/courses", updatedCourse, () => {
     window.location.replace("/user");
   });
 };
