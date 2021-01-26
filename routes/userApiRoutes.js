@@ -40,7 +40,8 @@ module.exports = app => {
     } else {
       // Otherwise send back the user's email and id
       const userData = await db.User.findOne({
-        where: { id: req.user.id }
+        where: { id: req.user.id },
+        attributes: { exclude: ["password"] }
       });
 
       res.json(userData);
