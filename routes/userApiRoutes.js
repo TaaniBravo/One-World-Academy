@@ -12,6 +12,16 @@ module.exports = app => {
 
   // Route for signing up a user. Passwords will be auto hashed and stored securely.
   app.post("/api/sign-up", async (req, res) => {
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL
+    } = req.body;
+
     await db.User.create({
       email: req.body.email,
       password: req.body.password,
