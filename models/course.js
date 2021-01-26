@@ -34,6 +34,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+
+    // A category can have many courses
+    Course.belongsTo(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return Course;

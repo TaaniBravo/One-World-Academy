@@ -35,6 +35,14 @@ module.exports = function(sequelize, DataTypes) {
         "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fmiddle%2F157-1578186_user-profile-default-image-png-clipart.png",
       validate: {
         isUrl: true
+      },
+
+      socialMedia: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+          isUrl: true
+        }
       }
     },
 
@@ -47,6 +55,18 @@ module.exports = function(sequelize, DataTypes) {
 
   User.associate = function(models) {
     User.hasMany(models.Course, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.Lesson, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.QuizQuestions, {
+      onDelete: "cascade"
+    });
+
+    User.hasMany(models.Quiz, {
       onDelete: "cascade"
     });
 

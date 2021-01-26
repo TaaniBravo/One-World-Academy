@@ -24,6 +24,12 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+
+    Lesson.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
   return Lesson;
