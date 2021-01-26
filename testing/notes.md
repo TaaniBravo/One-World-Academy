@@ -1,8 +1,1 @@
-ESLint
-- 
-
-TravisCI
-
-Chai
-
-Mocha
+npx sequelize-cli db:seed:all

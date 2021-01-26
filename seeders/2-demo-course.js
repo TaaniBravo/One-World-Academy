@@ -5,12 +5,11 @@ module.exports = {
     return queryInterface.bulkInsert("Courses", [
       {
         id: 1,
-        title: "JS Entry Level",
+        title: "HTML Entry Level",
         category: "JS",
         courseImage:
-          "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg",
-        courseDescription:
-          "This is a course for the beginners with JS language.",
+          "https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/html-512.png",
+        courseDescription: "This is a beginners course for HTML.",
         createdAt: new Date(),
         updatedAt: new Date(),
         UserId: 1
@@ -21,9 +20,31 @@ module.exports = {
         title: "CSS Entry Level",
         category: "CSS",
         courseImage:
-          "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png",
-        courseDescription:
-          "This is a course for the beginners with CSS language.",
+          "https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/css-512.png",
+        courseDescription: "This is a beginners course for CSS.",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: 1
+      },
+      {
+        id: 3,
+        title: "JavaScript Entry Level",
+        category: "JS",
+        courseImage:
+          "https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/javascript-512.png",
+        courseDescription: "This is a beginners course for JavsScript.",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        UserId: 1
+      },
+
+      {
+        id: 4,
+        title: "Node JS Entry Level",
+        category: "CSS",
+        courseImage:
+          "https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/nodejs-512.png",
+        courseDescription: "This is a beginners course for Node jS.",
         createdAt: new Date(),
         updatedAt: new Date(),
         UserId: 1

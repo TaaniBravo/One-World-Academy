@@ -1,10 +1,11 @@
 {{#each course}}
 <div class="card-style flex-course-col m-1">
-    <img src="{{imageURL}}" class="card-img-top" alt="..." style="border-radius: 10px 10px 0 0;">
+    <img src="{{courseImage}}" class="card-img-top" alt="..." style="border-radius: 10px 10px 0 0;">
     <div class="card-body" id="course-section">
     <h5 class="card-title">{{title}}</h5>
     <p class="card-text">{{courseDescription}}</p>
-    <a href="/courses/{{id}}" class="btn btn-info btn-block">View Course</a>
+    <a href="/courses/{{id}}" class="btn btn-outline-info btn-block">View Course</a>
+    <a href="/courses/{{id}}" class="btn btn-danger btn-block">DeleteCourse</a>
     </div>
 </div>
 {{/each}}

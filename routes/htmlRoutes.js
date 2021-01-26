@@ -72,11 +72,11 @@ module.exports = app => {
   ];
 
   app.get("/course-catalog", async (req, res) => {
-    const courses = await db.Course.findAll({
+    const course = await db.Course.findAll({
       raw: true
     });
 
-    res.render("course-catalog", { courseCatalog: courses });
+    res.render("course-catalog", { course: course });
   });
 
   app.get("/about-us", (req, res) => {
