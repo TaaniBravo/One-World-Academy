@@ -3,13 +3,14 @@
         {{> nav}}
         <div class="container">
         <div class="flex-grid">
+          <section class="hero-col"><img class="hero-image col-12 col-sm-6 card-style" src="{{course.courseImage}}"/></section>
           <section class="hero-col">
             <h3 class="h3-hero">Welcome to:</h3>
             <h1 class="h1-hero">{{course.title}}</h1>
             <h5 class="h5-hero">{{course.courseDescription}}</h5>
-            <a class="btn button-green text-light col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
+            <a class="btn btn-warning col-12 col-sm-4 m-1" href="/course-catalog">Update Lesson</a>
+            <a class="btn btn-danger col-12 col-sm-4 m-1" href="/course-catalog">Delete Lesson</a>
           </section>
-          <section class="hero-col"><img class="hero-image col-12 col-sm-6" src="{{course.courseImage}}" /></section>
         </div>
       </div>
     </div>
@@ -24,6 +25,7 @@
         {{> lesson}}
     {{/each}}
     </div>
+        <a class="btn btn-outline-info col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
     </div>
 </div>
 </div>

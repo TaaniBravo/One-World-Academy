@@ -63,7 +63,7 @@ body {
 	padding-left: 60px;
 	display: flex;
 	padding-bottom: 10px;
-	border-bottom: 1px dashed #ddd;
+	/* border-bottom: 1px dashed #ddd; */
 }
 .hero-col {
 	flex: 1;
@@ -103,15 +103,15 @@ body {
 	background-color: #a7cf02;
 	color: white;
 }
+.button-link {
+	background-color: #f1f1f1;
+	color: #007bff;
+}
 
 .form-padding {
 	margin-top: 110px;
 }
 
-/* ---------Welcome Section */
-.welcome {
-	background-color: #fbfcfd;
-}
 
 /* Card Styling */
 
@@ -120,25 +120,49 @@ body {
 		90deg,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 1) 0%
-	);
-	border-radius: 10px;
-	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
-	position: relative;
-}
+		);
+		border-radius: 10px;
+		box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+	
+	.lesson-header {
+		border-bottom: 1px dashed #a7cf02;
+		margin-bottom: 20px;
+	}
+	
+	.lesson-body {
+		background-color: #fafafa;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	
+	.welcome-main{
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		background-color: #fbfcfd;
+		color: #0C0F32;
+		padding-top: 20px;
+	}
+	/* --------- Team Section */
+	.welcome {
+		border-top: 1px solid #e7e7e7;
+		border-bottom: 1px solid #e7e7e7;
+		background-color: #fbfcfd;
+	}
+	.team {
+		margin-top: -200px;
+		color: #ffffff;
+		background-color: #0C0F32;
+	}
 
-.lesson-header {
-	border-bottom: 1px dashed #a7cf02;
-	margin-bottom: 20px;
-}
+	.team-img {
+		height:100%;
+		width: auto;
+	}
 
-.lesson-body {
-	background-color: #fafafa;
-	padding: 10px;
-	border-radius: 10px;
-}
-
-.footer {
-	flex-shrink: 0;
+.footer-section {
+	background-color: #020310;
 }
 
 /*---Media Queries --*/
