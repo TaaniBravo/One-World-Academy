@@ -3,9 +3,9 @@
 
 <form class="form-signin container form-padding card-style">
 
-    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Lesson</h1>
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Update Lesson</h1>
 
-    <div class="form-group">
+    <div class="form-group" id="data" data-lesson={{lesson.id}}>
         <p for="category" class="text-left">Select Lessons:</p>
         <select class="form-control" id="course" placeholder="Select Course" name="course">
             {{> course-selection}}
@@ -20,11 +20,11 @@
     <label for="lecture" class="sr-only">Lesson Description</label>
     <input type="text" id="lessonDescription" name="lecture" class="form-control my-1" placeholder="Lesson Description" required autofocus rows="5"/>
     
-    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="create-lesson-btn" type="submit">
-        Create a Lesson
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="update-lesson-btn" type="submit">
+        Update Lesson
     </button>
 
     <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
 </form>
 
-<script src="./assets/js/update-lesson.js"></script>
+<script src="../assets/js/update-lesson.js"></script>

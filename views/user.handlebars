@@ -31,11 +31,11 @@
   </div>
   <div class="container card-style p-3">
     <div class="column">
-      <ul>
+      <ul class="lessons">
         {{#each lesson}}
         <li class="m-1">{{lessonTitle}}
-          <button class="btn btn-info">Update Course</button>
-          <button class="btn btn-danger">Delete Course</button>
+          <a href="/update-lesson/{{id}}"><button class="btn btn-info" >Update Lesson</button></a>
+          <button class="btn btn-danger delete-button" data-lesson="{{id}}">Delete Lesson</button>
         </li>
         {{/each}}
       </ul>
@@ -44,4 +44,4 @@
 </div>
 
 <script src="./assets/js/userpage.js"></script>
-<script src="./assets/js/delete-course.js"></script>
+{{!-- <script src="./assets/js/delete-course.js"></script> --}}

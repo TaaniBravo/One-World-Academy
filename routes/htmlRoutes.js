@@ -7,70 +7,6 @@ module.exports = app => {
     res.render("index");
   });
 
-  //For testing purposes
-
-  const course = [
-    {
-      courseTitle: "Javascript",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      id: 1,
-      imageURL:
-        "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
-    },
-    {
-      courseTitle: "Node JS",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      id: 2,
-      imageURL:
-        "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
-    },
-    {
-      courseTitle: "React",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      id: 3,
-      imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
-    },
-    {
-      courseTitle: "Javascript",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "javascript",
-      imageURL:
-        "https://html5hive.org/wp-content/uploads/2014/06/js_800x800.jpg"
-    },
-    {
-      courseTitle: "Node JS",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "nodejs",
-      imageURL:
-        "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png"
-    },
-    {
-      courseTitle: "React",
-      courseDescription:
-        "A 2 Month course on Node JS and Server Side Programming",
-      courseURL: "react",
-      imageURL: "https://cdn.auth0.com/blog/react-js/react.png"
-    }
-  ];
-
-  const lessonObj = [
-    {
-      lessonTitle: "Node JS",
-      lecture:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      lessonTitle: "Node JS",
-      lecture:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    }
-  ];
-
   app.get("/course-catalog", async (req, res) => {
     const course = await db.Course.findAll({
       raw: true
@@ -162,8 +98,48 @@ module.exports = app => {
     }
   });
 
-  // Route for creating a lesson.
-  app.get("/create-quiz", isAuthenticated, (req, res) => {
-    res.render("create-quiz");
+  // Route for creating a quiz.
+  // app.get("/create-quiz", isAuthenticated, (req, res) => {
+  //   res.render("create-quiz");
+  // });
+
+  // Route for updating a course.
+  app.get("/update-course/:id", isAuthenticated, async (req, res) => {
+    const { id } = req.params;
+    const courseData = await db.Course.findOne({
+      where: {
+        id,
+        UserId: req.user.id
+      },
+      raw: true
+    });
+
+    if (!courseData) {
+      res.status(400);
+      res.render("user");
+    } else {
+      res.render("update-course", { course: courseData });
+    }
+  });
+
+  // Route for updating a lesson.
+  app.get("/update-lesson/:id", isAuthenticated, async (req, res) => {
+    const { id } = req.params;
+    const courseArray = await db.Course.findAll({
+      where: { userId: req.user.id },
+      raw: true
+    });
+    const lessonData = await db.Lesson.findOne({
+      where: {
+        id,
+        UserId: req.user.id
+      },
+      raw: true
+    });
+
+    res.render("update-lesson", {
+      course: courseArray,
+      lesson: lessonData
+    });
   });
 };

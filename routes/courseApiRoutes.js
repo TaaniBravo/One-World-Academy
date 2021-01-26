@@ -14,6 +14,21 @@ module.exports = app => {
     }
   });
 
+  app.get("/api/courses/:id", async (req, res) => {
+    const course = await db.Course.findOne({
+      where: {
+        id: req.params.id
+      },
+      raw: true
+    });
+
+    try {
+      res.json(course);
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  });
+
   // POST Route for creating a user's course
   app.post("/api/courses", async (req, res) => {
     const { title, category, courseDescription } = req.body;
@@ -38,8 +53,8 @@ module.exports = app => {
   });
 
   // PUT Route for updating the user's course.
-  app.put("/api/courses/:id", async (req, res) => {
-    const { title, category, courseImage, courseDescription } = req.body;
+  app.put("/api/courses", async (req, res) => {
+    const { id, title, category, courseImage, courseDescription } = req.body;
 
     const updatedInfo = {
       title,
@@ -48,8 +63,12 @@ module.exports = app => {
       courseDescription
     };
 
+    if (courseImage === "") {
+      delete updatedInfo.courseImage;
+    }
+
     const updatedCourse = await db.Course.update(updatedInfo, {
-      where: { id: req.body.id }
+      where: { id }
     });
 
     try {
@@ -62,7 +81,7 @@ module.exports = app => {
   // DELETE Route for deleting a user's course.
   app.delete("/api/courses/:id", async (req, res) => {
     const deleteCourse = await db.Course.destroy({
-      where: { id: req.params.id }
+      where: { id: req.body.id }
     });
 
     try {

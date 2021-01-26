@@ -1,14 +1,18 @@
+const $title = $("input#courseTitle");
+const $category = $("#courseCategory");
+const $courseImage = $("input#courseImage");
+const $courseDescription = $("input#courseDescription");
+const $courseId = $("label#data").data("course");
+
 $(document).ready(() => {
-  const $title = $("input#courseTitle");
-  const $category = $("#courseCategory");
-  const $courseImage = $("input#courseImage");
-  const $courseDescription = $("input#courseDescription");
+  // Once the document is ready the current data for the course is appended.
+  getCourse();
 
   $("form").on("submit", event => {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    const newCourse = {
+    const updatedCourse = {
+      id: $courseId,
       title: $title.val(),
       category: $category.val(),
       courseImage: $courseImage.val(),
@@ -16,20 +20,36 @@ $(document).ready(() => {
     };
 
     if (
-      !newCourse.title ||
-      !newCourse.category ||
-      !newCourse.courseDescription
+      !updatedCourse.title ||
+      !updatedCourse.category ||
+      !updatedCourse.courseDescription
     ) {
       return;
     }
 
-    // Send the POST request.
-    createCourse(newCourse);
+    console.log(updatedCourse);
+    // Send the PUT request.
+    updateCourse(updatedCourse);
   });
 });
 
-const createCourse = async newCourse => {
-  await $.put("/api/courses", newCourse, () => {
-    window.location.replace("/user");
+const updateCourse = async updatedCourse => {
+  await $.ajax({
+    url: "/api/courses",
+    type: "PUT",
+    data: updatedCourse
+  });
+
+  // console.log(data);
+  window.location.replace(`/courses/${$courseId}`);
+};
+
+const getCourse = async () => {
+  await $.get(`/api/courses/${$courseId}`, courseData => {
+    console.log(courseData);
+    $title.val(courseData.title);
+    $category.val(courseData.category);
+    $courseImage.val(courseData.courseImage);
+    $courseDescription.val(courseData.courseDescription);
   });
 };
