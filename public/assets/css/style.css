@@ -161,8 +161,13 @@ body {
 		width: auto;
 	}
 
+	.border-bottom-style {
+		border-bottom: 1px dashed #a5a2f6;
+	}
+
 .footer-section {
 	background-color: #020310;
+	padding-top: 20px;
 }
 
 /*---Media Queries --*/
