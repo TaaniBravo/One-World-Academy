@@ -5,6 +5,11 @@ $(document).ready(() => {
   const lastNameInput = $("input#inputLastName");
   const emailInput = $("input#inputEmail");
   const passwordInput = $("input#inputPassword");
+  const bioInput = $("input#inputBio");
+  const profileInput = $("input#inputProfilePic");
+  const twitterInput = $("input#inputTwitter");
+  const linkedInInput = $("input#inputLinkedIn");
+  const gitHubInput = $("input#inputGitHub");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -13,7 +18,12 @@ $(document).ready(() => {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       firstName: firstNameInput.val().trim(),
-      lastName: lastNameInput.val().trim()
+      lastName: lastNameInput.val().trim(),
+      bio: bioInput.val().trim(),
+      profilePic: profileInput.val().trim(),
+      twitterURL: twitterInput.val().trim(),
+      linkedinURL: linkedInInput.val().trim(),
+      githubURL: gitHubInput.val().trim()
     };
 
     if (
@@ -29,7 +39,12 @@ $(document).ready(() => {
       userData.email,
       userData.password,
       userData.firstName,
-      userData.lastName
+      userData.lastName,
+      userData.bio,
+      userData.profilePic,
+      userData.twitterURL,
+      userData.linkedinURL,
+      userData.githubURL
     );
     emailInput.val("");
     passwordInput.val("");
@@ -42,7 +57,12 @@ $(document).ready(() => {
       email: email,
       password: password,
       firstName: firstName,
-      lastName: lastName
+      lastName: lastName,
+      bio: bio,
+      profilePic: profilePic,
+      twitterURL: twitterURL,
+      linkedinURL: linkedinURL,
+      githubURL: githubURL
     });
     try {
       window.location.replace("/user");
