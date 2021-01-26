@@ -23,10 +23,13 @@ module.exports = app => {
     } = req.body;
 
     await db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName
+      email,
+      password,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL
     });
 
     try {
