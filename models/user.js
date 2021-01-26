@@ -13,6 +13,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
+    // The password cannot be null
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -38,18 +44,31 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    socialMedia: {
+    twitterURL: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        isUrl: true
+        isUrl: true,
+        contains: "https://twitter.com/"
       }
     },
 
-    // The password cannot be null
-    password: {
+    linkedinURL: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      validate: {
+        isUrl: true,
+        contains: "https://linkedin.com/"
+      }
+    },
+
+    githubURL: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true,
+        contains: "https://github.com/"
+      }
     }
   });
 
