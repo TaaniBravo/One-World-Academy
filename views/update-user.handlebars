@@ -1,8 +1,8 @@
-{{!-- Header --}}
+Header
 {{> simple-header}}
 
 <form class="form-signin container form-padding card-style">
-    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create your One World Academy account</h1>
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Update Profile</h1>
 
     {{!-- First name user input --}}
     <label for="firstName" class="sr-only">First Name</label>
@@ -32,12 +32,10 @@
     <label for="gitHub" class="sr-only">GitHub</label>
     <input type="text" id="inputGitHub" name="gitHub" class="form-control my-1" placeholder="Github Url"/>
 
-    <button class="btn btn-lg btn-warning btn-block text-light" type="submit">
-        Create Account
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="update-course-btn" type="submit">
+        Update Profile
     </button>
-
-    <p class="mt-3 text-muted text-center">Already have an account? <a href="/sign-in">Sign in</a></p>
 
 </form>
 
-<script src="../assets/js/sign-up.js"></script>
+<script src="../assets/js/update-user.js"></script>
