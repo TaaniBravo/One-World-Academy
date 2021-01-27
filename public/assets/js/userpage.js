@@ -2,6 +2,12 @@ const $aboutMeLink = $("li#aboutMe");
 
 $(document).ready(() => {
   $aboutMeLink.after(`<li class="nav-item">
+  <a class="nav-link" href="/create-course">Create A Course</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/create-lesson">Create A Lesson</a>
+</li>
+<li class="nav-item">
   <a class="nav-link" href="/update-user">Edit My Profile</a>
 </li>`);
 

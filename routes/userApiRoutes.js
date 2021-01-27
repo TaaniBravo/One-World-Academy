@@ -1,6 +1,7 @@
 const db = require("../models");
 const passport = require("passport");
 require("../config/passport");
+const bcrypt = require("bcryptjs");
 
 module.exports = app => {
   app.post("/api/sign-in", passport.authenticate("local"), (req, res) => {
@@ -74,14 +75,16 @@ module.exports = app => {
 
     const {
       email,
-      password,
       firstName,
       lastName,
       twitterURL,
       linkedinURL,
       githubURL,
-      bio
+      bio,
+      profilePic
     } = req.body;
+
+    password = bcrypt.hashSync(req.body.password, 10);
 
     const updatedUser = {
       email,
@@ -91,7 +94,8 @@ module.exports = app => {
       twitterURL,
       linkedinURL,
       githubURL,
-      bio
+      bio,
+      profilePic
     };
 
     if (email === "") {
@@ -120,6 +124,14 @@ module.exports = app => {
 
     if (githubURL === "") {
       delete updatedUser.githubURL;
+    }
+
+    if (bio === "") {
+      delete updatedUser.bio;
+    }
+
+    if (profilePic === "") {
+      delete updatedUser.profilePic;
     }
 
     const updatedInfo = await db.User.update(updatedUser, {
