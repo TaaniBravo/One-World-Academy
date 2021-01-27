@@ -52,10 +52,6 @@ header {
 	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
 }
 
-/* .logo{
-    height: 32px;
-    width: auto;
-} */
 .section1-hero {
 	padding-left: 20px;
 }
@@ -70,7 +66,6 @@ header {
 	padding-left: 60px;
 	display: flex;
 	padding-bottom: 10px;
-	/* border-bottom: 1px dashed #ddd; */
 }
 .hero-col {
 	flex: 1;
@@ -109,10 +104,6 @@ header {
 .button-green {
 	background-color: #a7cf02;
 	color: white;
-}
-.button-link {
-	background-color: #f1f1f1;
-	color: #007bff;
 }
 
 .form-padding {
@@ -160,28 +151,29 @@ header {
 	border-top: 1px solid #e7e7e7;
 	border-bottom: 1px solid #e7e7e7;
 	padding-top: 20px;
-	/* margin-top: -200px; */
 	color: #ffffff;
 	background-color: #ffffff;
 	background-image: url("../images/bg2.png");
 	background-repeat: space;
 }
-
-.team-img {
-	height: 100%;
-	width: auto;
-}
-
 .profile-pic {
 	color: white;
 	border-radius: 5px;
 	padding: 10px;
 	background-color: #a7cf02;
 }
+.logout {
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #dc3545;
+	margin-left: 5px;
+}
 
-/* .border-bottom-style {
-		border-bottom: 1px dashed #a5a2f6;
-	} */
+.team-img {
+	height: 100%;
+	width: auto;
+}
 
 .footer-section {
 	background-color: #020310;
@@ -204,6 +196,10 @@ header {
 	}
 	.flex-course-col {
 		width: 100%;
+	}
+	.logout {
+		margin-top: 5px;
+		margin-left: 0px;
 	}
 }
 @media (max-width: 576px) {

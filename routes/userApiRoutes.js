@@ -1,6 +1,7 @@
 const db = require("../models");
 const passport = require("passport");
 require("../config/passport");
+const bcrypt = require("bcryptjs");
 
 module.exports = app => {
   app.post("/api/sign-in", passport.authenticate("local"), (req, res) => {
@@ -67,9 +68,92 @@ module.exports = app => {
     }
   });
 
-  // app.get("/api/user", async (req, res) => {
-  //   const userData = await db.User.findOne({
-  //     where: { id: req.user.id }
-  //   });
-  // });
+  app.put("/api/user_data", async (req, res) => {
+    if (!req.user) {
+      return;
+    }
+
+    const {
+      email,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL,
+      bio,
+      profilePic
+    } = req.body;
+
+    const password = bcrypt.hashSync(req.body.password, 10);
+
+    const updatedUser = {
+      email,
+      password,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL,
+      bio,
+      profilePic
+    };
+
+    if (email === "") {
+      delete updatedUser.email;
+    }
+
+    if (password === "") {
+      delete updatedUser.password;
+    }
+
+    if (firstName === "") {
+      delete updatedUser.firstName;
+    }
+
+    if (lastName === "") {
+      delete updatedUser.lastName;
+    }
+
+    if (twitterURL === "") {
+      delete updatedUser.twitterURL;
+    }
+
+    if (linkedinURL === "") {
+      delete updatedUser.linkedinURL;
+    }
+
+    if (githubURL === "") {
+      delete updatedUser.githubURL;
+    }
+
+    if (bio === "") {
+      delete updatedUser.bio;
+    }
+
+    if (profilePic === "") {
+      delete updatedUser.profilePic;
+    }
+
+    const updatedInfo = await db.User.update(updatedUser, {
+      where: { id: req.user.id }
+    });
+
+    try {
+      res.json(updatedInfo);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.delete("/api/user_data", async (req, res) => {
+    const deleteUser = await db.User.destroy({
+      where: { id: req.user.id }
+    });
+
+    try {
+      res.json(deleteUser);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
 };

@@ -10,14 +10,14 @@ $(document).ready(() => {
 
     const newCourse = {
       title: $title.val(),
-      category: $category.val(),
+      CategoryId: $category.val(),
       courseImage: $courseImage.val(),
       courseDescription: $courseDescription.val()
     };
 
     if (
       !newCourse.title ||
-      !newCourse.category ||
+      !newCourse.CategoryId ||
       !newCourse.courseDescription
     ) {
       return;
