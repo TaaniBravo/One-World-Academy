@@ -32,6 +32,10 @@ $(document).ready(() => {
 
     deleteLesson(lesson);
   });
+
+  $("delete-user-btn").on("click", () => {
+    deleteProfile();
+  });
 });
 
 // This function does an API call to delete posts
@@ -54,4 +58,13 @@ const deleteLesson = async lesson => {
   });
 
   window.location.replace("/user");
+};
+
+const deleteProfile = async () => {
+  await $.ajax({
+    method: "DELETE",
+    url: "/api/user_data"
+  });
+
+  window.location.replace("/");
 };

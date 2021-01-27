@@ -84,7 +84,7 @@ module.exports = app => {
       profilePic
     } = req.body;
 
-    password = bcrypt.hashSync(req.body.password, 10);
+    const password = bcrypt.hashSync(req.body.password, 10);
 
     const updatedUser = {
       email,
@@ -140,6 +140,18 @@ module.exports = app => {
 
     try {
       res.json(updatedInfo);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
+
+  app.delete("/api/user_data", async (req, res) => {
+    const deleteUser = await db.User.destroy({
+      where: { id: req.user.id }
+    });
+
+    try {
+      res.json(deleteUser);
     } catch (error) {
       res.status(401).json(error);
     }
