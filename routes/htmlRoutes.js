@@ -76,8 +76,12 @@ module.exports = app => {
   });
 
   // Route for creating a course.
-  app.get("/create-course", isAuthenticated, (req, res) => {
-    res.render("create-course");
+  app.get("/create-course", isAuthenticated, async (req, res) => {
+    const categories = await db.Category.findAll({
+      raw: true
+    });
+
+    res.render("create-course", { categories });
   });
 
   // Route for creating a lesson.
