@@ -1,10 +1,10 @@
 {{!-- Header --}}
 {{> simple-header}}
 <form class="form-signin container form-padding card-style">
-    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Course</h1>
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Update Course</h1>
 
     {{!-- Course title user input --}}
-    <label for="courseTitle" class="sr-only">Course Title</label>
+    <label for="courseTitle" class="sr-only" id="data" data-course={{course.id}}>Course Title</label>
     <input type="text" id="courseTitle" name="title" class="form-control my-1" placeholder="Course Title" required autofocus/>
     
     
@@ -23,13 +23,13 @@
 
     {{!-- Course description user input --}}
     <label for="courseDescription" class="sr-only">Course Description</label>
-    <input type="text" id="courseDescription" name="courseDescription" class="form-control my-1" placeholder="Course Bio" rows="5"></input>
+    <input type="text" id="courseDescription" name="courseDescription" class="form-control my-1" placeholder="Course Bio" rows="5"/>
     
-    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="create-course-btn" type="submit">
-        Create Course
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="update-course-btn" type="submit">
+        Update Course
     </button>
 
     <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
 </form>
 
-<script src="./assets/js/update-course.js"></script>
+<script src="../assets/js/update-course.js"></script>
