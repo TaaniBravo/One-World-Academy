@@ -1,4 +1,4 @@
-// const $userId = 
+// const $userId =
 const $userForm = $("form");
 const $userFirstName = $("input#inputFirstName");
 const $userLastName = $("input#inputLastName");
@@ -50,14 +50,14 @@ const updateUser = async (updatedUser, userId) => {
   window.location.replace(`/user/${userId}`);
 };
 
-const getUser = async () => {
-  await $.get(`/api/user/${$userId}`, userData => {
-    $userEmail.val(userData.email).trim(),
-    $userPassword.val(userData.password).trim(),
-    $userFirstName.val(userData.firstName).trim(),
-    $userLastName.val(userData.lastName).trim(),
-    $userTwitter.val(userData.twitterURL).trim(),
-    $userLinkedIn.val(userData.linkedinURL).trim(),
-    $userGitHub.val(userData.githubURL).trim()
-  });
-};
+// const getUser = async () => {
+//   await $.get(`/api/user/${$userId}`, userData => {
+//     $userEmail.val(userData.email).trim(),
+//       $userPassword.val(userData.password).trim(),
+//       $userFirstName.val(userData.firstName).trim(),
+//       $userLastName.val(userData.lastName).trim(),
+//       $userTwitter.val(userData.twitterURL).trim(),
+//       $userLinkedIn.val(userData.linkedinURL).trim(),
+//       $userGitHub.val(userData.githubURL).trim();
+//   });
+// };
