@@ -24,7 +24,9 @@ $(document).ready(() => {
       lastName: $userLastName.val().trim(),
       twitterURL: $userTwitter.val().trim(),
       linkedinURL: $userLinkedIn.val().trim(),
-      githubURL: $userGitHub.val().trim()
+      githubURL: $userGitHub.val().trim(),
+      bio: $userBio.val().trim(),
+      profilePic: $userProfilePic.val().trim()
     };
 
     // Send the POST request.
