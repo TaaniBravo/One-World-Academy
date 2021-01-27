@@ -1,4 +1,10 @@
+const $aboutMeLink = $("li#aboutMe");
+
 $(document).ready(() => {
+  $aboutMeLink.after(`<li class="nav-item">
+  <a class="nav-link" href="/update-user">Edit My Profile</a>
+</li>`);
+
   $(".courses").on("click", ".delete-button", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();

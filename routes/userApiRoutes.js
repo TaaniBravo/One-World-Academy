@@ -67,9 +67,69 @@ module.exports = app => {
     }
   });
 
-  // app.get("/api/user", async (req, res) => {
-  //   const userData = await db.User.findOne({
-  //     where: { id: req.user.id }
-  //   });
-  // });
+  app.put("/api/user_data", async (req, res) => {
+    if (!req.user) {
+      return;
+    }
+
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL,
+      bio
+    } = req.body;
+
+    const updatedUser = {
+      email,
+      password,
+      firstName,
+      lastName,
+      twitterURL,
+      linkedinURL,
+      githubURL,
+      bio
+    };
+
+    if (email === "") {
+      delete updatedUser.email;
+    }
+
+    if (password === "") {
+      delete updatedUser.password;
+    }
+
+    if (firstName === "") {
+      delete updatedUser.firstName;
+    }
+
+    if (lastName === "") {
+      delete updatedUser.lastName;
+    }
+
+    if (twitterURL === "") {
+      delete updatedUser.twitterURL;
+    }
+
+    if (linkedinURL === "") {
+      delete updatedUser.linkedinURL;
+    }
+
+    if (githubURL === "") {
+      delete updatedUser.githubURL;
+    }
+
+    const updatedInfo = await db.User.update(updatedUser, {
+      where: { id: req.user.id }
+    });
+
+    try {
+      res.json(updatedInfo);
+    } catch (error) {
+      res.status(401).json(error);
+    }
+  });
 };

@@ -32,7 +32,7 @@ module.exports = {
         category: "JS",
         courseImage:
           "https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/javascript-512.png",
-        courseDescription: "This is a beginners course for JavsScript.",
+        courseDescription: "This is a beginners course for JavaScript.",
         createdAt: new Date(),
         updatedAt: new Date(),
         UserId: 1

@@ -98,10 +98,17 @@ module.exports = app => {
     }
   });
 
-  // Route for creating a quiz.
-  // app.get("/create-quiz", isAuthenticated, (req, res) => {
-  //   res.render("create-quiz");
-  // });
+  // Route for updating a course.
+  app.get("/update-user", isAuthenticated, async (req, res) => {
+    const userData = await db.User.findOne({
+      where: {
+        id: req.user.id
+      },
+      raw: true
+    });
+
+    res.render("update-user", { user: userData });
+  });
 
   // Route for updating a course.
   app.get("/update-course/:id", isAuthenticated, async (req, res) => {

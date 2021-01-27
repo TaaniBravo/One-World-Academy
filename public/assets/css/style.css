@@ -172,10 +172,14 @@ header {
 	}
 
 	.profile-pic {
-		color: white;
+		/* color: white; */
     border-radius: 5px;
     padding: 10px;
-    background-color: #a7cf02;
+    /* background-color: #a7cf02; */
+	}
+
+	.fa-user {
+		color: #a7cf02;
 	}
 
 
