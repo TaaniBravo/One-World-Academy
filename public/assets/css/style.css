@@ -38,6 +38,11 @@ header {
 	flex: 1 0 auto;
 }
 
+.logo-alt {
+	width: auto;
+	height: 52px;
+}
+
 .header-bg {
 	background-image: url("../images/hero-bg.png");
 	background-size: cover;
@@ -185,8 +190,6 @@ header {
 	flex-shrink: 0;
 }
 
-
-
 /*---Media Queries --*/
 @media (max-width: 992px) {
 }
@@ -207,6 +210,11 @@ header {
 	.logout {
 		margin-top: 5px;
 		margin-left: 0px;
+	}
+	.logo-alt {
+		padding: 5px;
+		width: 100%;
+		height: auto;
 	}
 }
 @media (max-width: 576px) {
