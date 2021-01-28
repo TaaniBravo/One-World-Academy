@@ -49,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       validate: {
         isUrl: true,
-        contains: "https://twitter.com/"
+        contains: "twitter.com/"
       }
     },
 
@@ -58,7 +58,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       validate: {
         isUrl: true,
-        contains: "https://linkedin.com/"
+        contains: "linkedin.com/"
       }
     },
 
@@ -67,7 +67,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       validate: {
         isUrl: true,
-        contains: "https://github.com/"
+        contains: "github.com/"
       }
     }
   });
