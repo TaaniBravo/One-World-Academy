@@ -23,8 +23,27 @@ $(document).ready(() => {
     deleteLesson(lesson);
   });
 
-  $("#delete-user-btn").on("click", () => {
-    deleteProfile();
+  $("#delete-user-btn").on("click", async event => {
+    event.preventDefault();
+
+    const value = await swal("Are you sure you want to delete your account?", {
+      buttons: {
+        cancel: "Nevermind",
+        delete: "Begone!"
+      }
+    });
+
+    switch (value) {
+      case "cancel":
+        break;
+
+      case "delete":
+        deleteProfile();
+        break;
+
+      default:
+        break;
+    }
   });
 });
 
