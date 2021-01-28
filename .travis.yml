@@ -1,0 +1,13 @@
+language: node_js
+node_js: "12"
+branches:
+  only:
+    - main
+    - working
+cache:
+  directiories:
+    - node_modules
+# services:
+#   - mysql
+# before install:
+#   - mysql -e 'CREATE DATABASE IF NOT EXISTS lmsDB;'

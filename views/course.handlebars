@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="container header-bg">
+        {{> nav}}
+        <div class="container">
+        <div class="flex-grid">
+          <section class="hero-col"><img class="hero-image col-12 col-sm-6 card-style" src="{{course.courseImage}}"/></section>
+          <section class="hero-col">
+            <h3 class="h3-hero">Welcome to:</h3>
+            <h1 class="h1-hero">{{course.title}}</h1>
+            <h5 class="h5-hero">{{course.courseDescription}}</h5>
+          </section>
+        </div>
+      </div>
+    </div>
+</header>
+
+<div class="welcome">
+<div class="container text-center py-3">
+    <div class="container card-style p-3">
+    <div class="column">
+    {{!-- TODO update data fields --}}
+    {{#each lesson}}
+        {{> lesson-public}}
+    {{/each}}
+    </div>
+        <a class="btn btn-outline-info col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
+    </div>
+</div>
+</div>

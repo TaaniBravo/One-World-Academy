@@ -1,0 +1,30 @@
+{{!-- Header --}}
+{{> simple-header}}
+
+<form class="form-signin container form-padding card-style">
+
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Update Lesson</h1>
+
+    <div class="form-group" id="data" data-lesson={{lesson.id}}>
+        <p for="category" class="text-left">Select Lessons:</p>
+        <select class="form-control" id="course" placeholder="Select Course" name="course">
+            {{> course-selection}}
+        </select>
+    </div>
+
+    {{!-- Lesson title user input --}}
+    <label for="lessonTitle" class="sr-only">Lesson Title</label>
+    <input type="text" id="lessonTitle" name="lessonTitle" class="form-control my-1" placeholder="Lesson Title" required autofocus/>
+    
+    {{!-- Lesson description user input --}}
+    <label for="lecture" class="sr-only">Lesson Description</label>
+    <input type="text" id="lessonDescription" name="lecture" class="form-control my-1" placeholder="Lesson Description" required autofocus rows="5"/>
+    
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="update-lesson-btn" type="submit">
+        Update Lesson
+    </button>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+</form>
+
+<script src="../assets/js/update-lesson.js"></script>

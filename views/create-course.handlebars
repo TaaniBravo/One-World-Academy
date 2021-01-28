@@ -1,0 +1,32 @@
+{{!-- Header --}}
+{{> simple-header}}
+<form class="form-signin container form-padding card-style">
+    <h1 class="h3 mb-3 font-weight-bold text-muted text-center">Create a Course</h1>
+
+    {{!-- Course title user input --}}
+    <label for="courseTitle" class="sr-only">Course Title</label>
+    <input type="text" id="courseTitle" name="title" class="form-control my-1" placeholder="Course Title" required autofocus/>
+    
+    
+    {{!-- Course category user input --}}
+    <label for="courseCategory" class="sr-only">Course Category</label>
+    <select class="form-control" id="courseCategory" name="category">
+        {{> category-selection}}
+    </select>
+
+    {{!-- Course author user input --}}
+    <label for="courseImage" class="sr-only">Course Image</label>
+    <input type="text" name="courseImage" id="courseImage" name="courseImage" class="form-control my-1" placeholder="Course Image"/>
+
+    {{!-- Course description user input --}}
+    <label for="courseDescription" class="sr-only">Course Description</label>
+    <input type="text" id="courseDescription" name="courseDescription" class="form-control my-1" placeholder="Course Bio" rows="5"></input>
+    
+    <button class="btn btn-lg btn-warning btn-block text-light pull-right" id="create-course-btn" type="submit">
+        Create Course
+    </button>
+
+    <p class="mt-5 mb-3 text-muted text-center">&copy; POD8 2021</p>
+</form>
+
+<script src="./assets/js/create-course.js"></script>
