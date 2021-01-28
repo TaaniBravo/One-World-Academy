@@ -26,17 +26,17 @@ No installation required for end-user; users can create an account on One World 
 ## Usage
 
 ### Deployed application
-[Add URL here]()
+[One World Academy](https://oneworldacademy.herokuapp.com/)
 
 ### User experience
-Users of One World Academy are able to
-* Create a new account and sign up, if a new user, using their first name, last name, email, and password
+Users of One World Academy are able to:
+* Create a new account and sign up, if a new user, using their first name, last name, email, password, as well as their accounts for Twitter, LinkedIn, and GitHub
 * Sign in successfully using their email and password, if a returning user
-* Create a new course
-* Create a new lesson(s), associated with a specific course
-* View courses all users have created on the Course Catalog page
+* Create, update, and delete a course from their profile page
+* Create, update, and delete a lesson(s), associated with a specific course from their profile page
+* View courses all users have created on the course catalog page
 * View a specific course and all associated lessons on a single course page
-* View all courses they have created on the User page
+* View all courses and lessons they have created on their profile page
 
 ## Tests
 
@@ -54,8 +54,6 @@ Users of One World Academy are able to
 
 ## Credits
 
-### Technologies used
-
 * [Heroku](https://www.heroku.com/)
 * [jQuery](https://jquery.com/)
 * [Node.js](https://nodejs.org/en/)
@@ -66,14 +64,8 @@ Users of One World Academy are able to
 * [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
-
 * [Font Awesome](https://fontawesome.com/)
 * [Bootstrap](https://getbootstrap.com/)
-
-* [Quiz](https://quizapi.io/)
-
-### Images
-
 
 ## License
 
