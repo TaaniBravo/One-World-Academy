@@ -94,7 +94,11 @@ module.exports = app => {
     console.log(courseArray);
 
     if (courseArray.length < 1 || courseArray === undefined) {
-      res.render("create-course");
+      const categories = await db.Category.findAll({
+        raw: true
+      });
+
+      res.render("create-course", { categories });
     } else {
       res.render("create-lesson", {
         course: courseArray
