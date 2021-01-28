@@ -23,7 +23,7 @@ $(document).ready(() => {
     deleteLesson(lesson);
   });
 
-  $("delete-user-btn").on("click", () => {
+  $("#delete-user-btn").on("click", () => {
     deleteProfile();
   });
 });
