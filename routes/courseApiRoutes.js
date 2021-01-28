@@ -31,18 +31,19 @@ module.exports = app => {
 
   // POST Route for creating a user's course
   app.post("/api/courses", async (req, res) => {
-    const { title, category, courseDescription } = req.body;
+    const { title, CategoryId, courseDescription } = req.body;
     let { courseImage } = req.body;
-    if (courseImage === "" || null) {
+    if (courseImage === "") {
       courseImage =
-        "https://p7.hiclipart.com/preview/252/365/162/education-pompes-funebres-terrasson-computer-icons-course-learning-certificate-icon.jpg";
+        "https://w7.pngwing.com/pngs/639/339/png-transparent-apprendimento-online-computer-icons-course-educational-technology-learning-learning-text-orange-logo.png";
     }
+
     const newCourse = await db.Course.create({
       title,
-      category,
       courseImage,
       courseDescription,
-      UserId: req.user.id
+      UserId: req.user.id,
+      CategoryId
     });
 
     try {

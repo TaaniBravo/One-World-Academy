@@ -36,6 +36,34 @@ module.exports = {
         category: "Node.JS",
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+
+      {
+        id: 6,
+        category: "English",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+      {
+        id: 7,
+        category: "Science",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+      {
+        id: 8,
+        category: "Math",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
+      {
+        id: 9,
+        category: "Art",
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ]);
   },

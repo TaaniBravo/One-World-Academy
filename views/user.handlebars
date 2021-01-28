@@ -1,50 +1,62 @@
 <header class="header">
   <div class="container header-bg">
-    {{> nav}}
+    {{> nav-user}}
     <div class="container">
       <div class="flex-grid">
         <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style" /></section>
         <section class="hero-col">
           <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
           <p><span class="fw-bold">Email: </span>{{user.email}}</p>
-          <p><span class="fw-bold">Social Media: </span> {{user.socialMedia}}</p>
-          <a class="btn btn-info col-12 col-sm-4 m-1" href="/course-catalog">Back to Courses</a>
-          <a class="btn btn-danger col-12 col-sm-4 m-1" href="/logout">Logout</a>
+          <p><span class="fw-bold">Bio: </span>{{user.bio}}</p>
+          <ul>{{> social-media}}</ul>
         </section>
       </div>
     </div>
   </div>
 </header>
 
-<div class="welcome">
+<div class="welcome py-3">
   <div class="container">
-  <div class="row text-muted">
-    <h2>User Courses</h2>
+    <div class="row text-muted">
+      <h2>User Options:</h2>
+    </div>
+    <div class="row p-3 justify-content-center">
+      <a class="btn btn-outline-success col-12 col-sm-2 btn-block m-1" href="/create-course"><i class="fas fa-file"></i> Create Course</a>
+      <a class="btn btn-outline-primary col-12 col-sm-2 btn-block m-1" href="/create-lesson"><i class="fas fa-file-alt"></i> Create Lesson</a>
+      <a class="btn btn-outline-info col-12 col-sm-2 btn-block m-1" href="/update-user"><i class="fas fa-pen-square"></i> Update Profile</a>
+      <button class="btn btn-danger col-12 col-sm-2 btn-block m-1" id="delete-user-btn"><i class="fas fa-trash"></i> Delete Account</button>
+    </div>
   </div>
-  <div class="row px-3">
-    {{> course-tile}}
-  </div>
-</div>
 
-<div class="container text-center py-3">
-  <div class="row text-muted">
-    <h2>User Lessons</h2>
+<div class="welcome py-3">
+  <div class="container">
+    <div class="row text-muted">
+      <h2>User Courses:</h2>
+    </div>
+    <div class="row px-3">
+      {{> course-tile}}
+    </div>
   </div>
+
+  <div class="container text-center py-3">
+    <div class="row text-muted">
+      <h2>User Lessons:</h2>
+    </div>
     <div class="column card-style">
       <ul class="list-group">
         {{#each lesson}}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div class="container">
-              <div class="row">
-                <div class="col">
-               <h5 class="text-muted p-2 row"> {{lessonTitle}}</h5>
-                </div>
-                <div class="col">
-              <a href="/update-lesson/{{id}}" class="btn btn-info my-1" >Update Lesson</a>
-              <button class="btn btn-danger delete-button my-1" data-lesson="{{id}}">Delete Lesson</button>
-                </div>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h5 class="text-muted p-2 row"> {{lessonTitle}}</h5>
               </div>
-          </li>
+              <div class="col">
+                <a href="/update-lesson/{{id}}" class="btn btn-outline-info my-1"><i class="fas fa-pen-square"></i> Update Lesson</a>
+                <button class="btn btn-danger delete-button my-1" data-lesson="{{id}}"><i class="fas fa-trash"></i> Delete Lesson</button>
+              </div>
+            </div>
+        </li>
         {{/each}}
       </ul>
     </div>
@@ -52,4 +64,3 @@
 </div>
 
 <script src="./assets/js/userpage.js"></script>
-{{!-- <script src="./assets/js/delete-course.js"></script> --}}

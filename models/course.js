@@ -6,16 +6,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    category: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
+    // category: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // },
 
     courseImage: {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue:
-        "https://p7.hiclipart.com/preview/252/365/162/education-pompes-funebres-terrasson-computer-icons-course-learning-certificate-icon.jpg"
+        "https://w7.pngwing.com/pngs/639/339/png-transparent-apprendimento-online-computer-icons-course-educational-technology-learning-learning-text-orange-logo.png"
     },
 
     courseDescription: {

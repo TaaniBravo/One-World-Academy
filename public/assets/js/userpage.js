@@ -1,3 +1,5 @@
+const $aboutMeLink = $("li#profile");
+
 $(document).ready(() => {
   $(".courses").on("click", ".delete-button", function(event) {
     // Make sure to preventDefault on a submit event.
@@ -19,6 +21,10 @@ $(document).ready(() => {
     };
 
     deleteLesson(lesson);
+  });
+
+  $("delete-user-btn").on("click", () => {
+    deleteProfile();
   });
 });
 
@@ -42,4 +48,13 @@ const deleteLesson = async lesson => {
   });
 
   window.location.replace("/user");
+};
+
+const deleteProfile = async () => {
+  await $.ajax({
+    method: "DELETE",
+    url: "/api/user_data"
+  });
+
+  window.location.replace("/");
 };

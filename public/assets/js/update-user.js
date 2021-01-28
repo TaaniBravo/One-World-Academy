@@ -6,7 +6,9 @@ const $userEmail = $("input#inputEmail");
 const $userPassword = $("input#inputPassword");
 const $userTwitter = $("input#inputTwitter");
 const $userLinkedIn = $("input#inputLinkedIn");
-const $userGitHub = $("input#inputGibHub");
+const $userGitHub = $("input#inputGitHub");
+const $userBio = $("input#inputBio");
+const $userProfilePic = $("input#inputProfilePic");
 
 $(document).ready(() => {
   getUser();
@@ -22,42 +24,36 @@ $(document).ready(() => {
       lastName: $userLastName.val().trim(),
       twitterURL: $userTwitter.val().trim(),
       linkedinURL: $userLinkedIn.val().trim(),
-      githubURL: $userGitHub.val().trim()
+      githubURL: $userGitHub.val().trim(),
+      bio: $userBio.val().trim(),
+      profilePic: $userProfilePic.val().trim()
     };
 
-    if (
-      !updatedUser.email ||
-      !updatedUser.password ||
-      !updatedUser.firstName ||
-      !updatedUser.lastName
-    ) {
-      return;
-    }
-
     // Send the POST request.
-    updateUser(updatedUser, $userId.val());
+    updateUser(updatedUser);
   });
 });
 
-const updateUser = async (updatedUser, userId) => {
+const updateUser = async updatedUser => {
   await $.ajax({
-    url: "/api/user",
+    url: "/api/user_data",
     type: "PUT",
     data: updatedUser
   });
 
   // console.log(data);
-  window.location.replace(`/user/${userId}`);
+  window.location.replace("/user");
 };
 
 const getUser = async () => {
-  await $.get(`/api/user/${$userId}`, userData => {
-    $userEmail.val(userData.email).trim();
-    $userPassword.val(userData.password).trim();
-    $userFirstName.val(userData.firstName).trim();
-    $userLastName.val(userData.lastName).trim();
-    $userTwitter.val(userData.twitterURL).trim();
-    $userLinkedIn.val(userData.linkedinURL).trim();
-    $userGitHub.val(userData.githubURL).trim();
+  await $.get("/api/user_data", userData => {
+    $userEmail.val(userData.email);
+    $userFirstName.val(userData.firstName);
+    $userLastName.val(userData.lastName);
+    $userTwitter.val(userData.twitterURL);
+    $userLinkedIn.val(userData.linkedinURL);
+    $userGitHub.val(userData.githubURL);
+    $userBio.val(userData.bio);
+    $userProfilePic.val(userData.profilePic);
   });
 };
