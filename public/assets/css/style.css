@@ -3,22 +3,23 @@
 /* BG Nav Image */
 
 body {
-  /* Set "my-sec-counter" to 0 */
-  counter-reset: my-sec-counter;
+	/* Set "my-sec-counter" to 0 */
+	counter-reset: my-sec-counter;
 }
 
 h4::before {
-  /* Increment "my-sec-counter" by 1 */
-  counter-increment: my-sec-counter;
-  content: "Lesson " counter(my-sec-counter) ": ";
-  background-color: #a7cf02;
-  border-radius: 100px;
-  margin-right:5px;
-  padding: 5px 10px;
-  color: white;
+	/* Increment "my-sec-counter" by 1 */
+	counter-increment: my-sec-counter;
+	content: "" counter(my-sec-counter) ":";
+	background-color: #a7cf02;
+	border-radius: 100px;
+	margin-right: 5px;
+	padding: 5px 10px;
+	color: white;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 }
 
@@ -30,7 +31,7 @@ body {
 header {
 	background-color: white;
 	background-image: url("../images/bg2.png");
-
+	background-repeat: space;
 }
 
 .header-bg {
@@ -51,10 +52,6 @@ header {
 	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
 }
 
-/* .logo{
-    height: 32px;
-    width: auto;
-} */
 .section1-hero {
 	padding-left: 20px;
 }
@@ -69,13 +66,12 @@ header {
 	padding-left: 60px;
 	display: flex;
 	padding-bottom: 10px;
-	/* border-bottom: 1px dashed #ddd; */
 }
 .hero-col {
 	flex: 1;
 }
 
-.flex-course{
+.flex-course {
 	display: flex;
 	justify-content: space-between;
 }
@@ -109,15 +105,10 @@ header {
 	background-color: #a7cf02;
 	color: white;
 }
-.button-link {
-	background-color: #f1f1f1;
-	color: #007bff;
-}
 
 .form-padding {
 	margin-top: 110px;
 }
-
 
 /* Card Styling */
 
@@ -126,66 +117,63 @@ header {
 		90deg,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 1) 0%
-		);
-		border-radius: 10px;
-		box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
-		position: relative;
-	}
-	
-	.lesson-header {
-		border-bottom: 1px dashed #a7cf02;
-		margin-bottom: 20px;
-	}
-	
-	.lesson-body {
-		background-color: #fafafa;
-		padding: 10px;
-		border-radius: 10px;
-	}
-	
-	.welcome-main{
-		border-top: 1px solid #e7e7e7;
-		border-bottom: 1px solid #e7e7e7;
-		background-color: #fbfcfd;
-		color: #0C0F32;
-		padding-top: 20px;
-	}
-	/* --------- Team Section */
-	.welcome {
-		border-top: 1px solid #e7e7e7;
-		border-bottom: 1px solid #e7e7e7;
-		background-color: #fbfcfd;
-	}
-	.team {
-		border-top: 1px solid #e7e7e7;
-		border-bottom: 1px solid #e7e7e7;
-		padding-top: 20px;
-		/* margin-top: -200px; */
-		color: #ffffff;
-		background-color: #ffffff;
-		background-image: url("../images/bg2.png");
-	}
+	);
+	border-radius: 10px;
+	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
 
-	.team-img {
-		height:100%;
-		width: auto;
-	}
+.lesson-header {
+	border-bottom: 1px dashed #a7cf02;
+	margin-bottom: 20px;
+}
 
-	.profile-pic {
-		/* color: white; */
-    border-radius: 5px;
-    padding: 10px;
-    /* background-color: #a7cf02; */
-	}
+.lesson-body {
+	background-color: #fafafa;
+	padding: 10px;
+	border-radius: 10px;
+}
 
-	.fa-user {
-		color: #a7cf02;
-	}
+.welcome-main {
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	background-color: #fbfcfd;
+	color: #0c0f32;
+	padding-top: 20px;
+}
+/* --------- Team Section */
+.welcome {
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	background-color: #fbfcfd;
+}
+.team {
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	padding-top: 20px;
+	color: #ffffff;
+	background-color: #ffffff;
+	background-image: url("../images/bg2.png");
+	background-repeat: space;
+}
+.profile-pic {
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #a7cf02;
+}
+.logout {
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #dc3545;
+	margin-left: 5px;
+}
 
-
-	/* .border-bottom-style {
-		border-bottom: 1px dashed #a5a2f6;
-	} */
+.team-img {
+	height: 100%;
+	width: auto;
+}
 
 .footer-section {
 	background-color: #020310;
@@ -207,8 +195,12 @@ header {
 		box-shadow: none;
 	}
 	.flex-course-col {
-	width: 100%;
-}
+		width: 100%;
+	}
+	.logout {
+		margin-top: 5px;
+		margin-left: 0px;
+	}
 }
 @media (max-width: 576px) {
 }

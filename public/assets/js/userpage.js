@@ -1,16 +1,6 @@
-const $aboutMeLink = $("li#aboutMe");
+const $aboutMeLink = $("li#profile");
 
 $(document).ready(() => {
-  $aboutMeLink.after(`<li class="nav-item">
-  <a class="nav-link" href="/create-course">Create Course</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="/create-lesson">Create Lesson</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="/update-user">Edit My Profile</a>
-</li>`);
-
   $(".courses").on("click", ".delete-button", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
