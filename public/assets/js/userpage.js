@@ -1,7 +1,7 @@
 const $aboutMeLink = $("li#profile");
 
 $(document).ready(() => {
-  $(".courses").on("click", ".delete-button", async function(event) {
+  $(".courses").on("click", ".delete-button", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -9,33 +9,10 @@ $(document).ready(() => {
       id: $(this).data("course")
     };
 
-    const value = await swal("Are you sure you want to delete this course?", {
-      buttons: {
-        cancel: "Nevermind",
-        delete: "Begone!"
-      }
-    });
-
-    switch (value) {
-      case "cancel":
-        break;
-
-      case "delete":
-        swal("Gotcha", "Course Deleted.", "success");
-        setTimeout(() => {
-          deleteCourse(course);
-        }, 1500);
-
-        break;
-
-      default:
-        break;
-    }
+    deleteCourse(course);
   });
 
-  // deleteCourse(course);
-
-  $(".lessons").on("click", ".delete-button", async function(event) {
+  $(".lessons").on("click", ".delete-button", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
@@ -43,34 +20,13 @@ $(document).ready(() => {
       id: $(this).data("lesson")
     };
 
-    const value = await swal("Are you sure you want to delete this lesson?", {
-      buttons: {
-        cancel: "Nevermind",
-        delete: "Begone!"
-      }
-    });
-
-    switch (value) {
-      case "cancel":
-        break;
-
-      case "delete":
-        swal("Gotcha", "Lesson Deleted.", "success");
-        setTimeout(() => {
-          deleteLesson(lesson);
-        }, 1500);
-
-        break;
-
-      default:
-        break;
-    }
+    deleteLesson(lesson);
   });
 
   $("#delete-user-btn").on("click", async event => {
     event.preventDefault();
 
-    const value = await swal("Are you sure you want to delete this course?", {
+    const value = await swal("Are you sure you want to delete your account?", {
       buttons: {
         cancel: "Nevermind",
         delete: "Begone!"
@@ -82,11 +38,7 @@ $(document).ready(() => {
         break;
 
       case "delete":
-        swal("Sad to see you leave!", "Deleting Profile...", "success");
-        setTimeout(() => {
-          deleteProfile();
-        }, 2000);
-
+        deleteProfile();
         break;
 
       default:
