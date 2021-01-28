@@ -28,7 +28,7 @@ module.exports = {
         id: 3,
         lessonTitle: "Variables",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "JavaScript includes variables which hold the data value and it can be changed anytime. JavaScript uses reserved keyword var to declare a variable. A variable must have a unique name. You can assign a value to a variable using equal to (=) operator when you declare it or before using it. Multiple variables can also be declared in a single line separated by comma. JavaScript allows variable declaration without var keyword. You must assign a value when you declare a variable without var keyword. Scope of the variables declared without var keyword become global irrespective of where it is declared. Global variables can be accessed from anywhere in the web page.",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 3,
@@ -39,7 +39,7 @@ module.exports = {
         id: 4,
         lessonTitle: "Array",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "We have learned that a variable can hold only one value, for example var i = 1, we can assign only one literal value to i. We cannot assign multiple literal values to a variable i. To overcome this problem, JavaScript provides an array. An array is a special type of variable, which can store multiple values using special syntax. Every value is associated with numeric index starting with 0. An array elements (values) can be accessed using index (key). Specify an index in square bracket with array name to access the element at particular index. Please note that index of an array starts from zero in JavaScript. Array includes 'length' property which returns number of elements in the array.",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 3,
