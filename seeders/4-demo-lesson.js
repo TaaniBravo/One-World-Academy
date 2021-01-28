@@ -49,7 +49,7 @@ module.exports = {
         id: 5,
         lessonTitle: "Objects",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "Object is a non-primitive data type in JavaScript. It is like any other variable, the only difference is that an object holds multiple values in terms of properties and methods. Properties can hold values of primitive data types and methods are functions. In JavaScript, an object is a standalone entity because there is no class in JavaScript. However, you can achieve class like functionality using functions.",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 3,
@@ -60,7 +60,7 @@ module.exports = {
         id: 6,
         lessonTitle: "Functions",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "In JavaScript, a function allows you to define a block of code, give it a name and then execute it as many times as you want. A JavaScript function can be defined using function keyword. A function can have one or more parameters, which will be supplied by the calling code and can be used inside a function. JavaScript is a dynamic type scripting language, so a function parameter can have value of any data type. You can pass less or more arguments while calling a function. If you pass less arguments then rest of the parameters will be undefined. If you pass more arguments then additional arguments will be ignored. All the functions in JavaScript can use arguments object by default. An arguments object includes value of each parameter.",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 3,
@@ -69,9 +69,9 @@ module.exports = {
 
       {
         id: 7,
-        lessonTitle: "Use of var, const, and let",
+        lessonTitle: "Operators",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "JavaScript includes operators as in other languages. An operator performs some operation on single or multiple operands (data value) and produces a result. For example 1 + 2, where + sign is an operator and 1 is left operand and 2 is right operand. + operator adds two numeric values and produces a result which is 3 in this case. JavaScript includes Arithmetic Operators, Comparison Operators, Logical Operators, Assignment Operators, and Conditional Operators. Arithmetic operators are used to perform mathematical operations between numeric operands. Comparison Operators compare two operands and return Boolean value true or false. Logical operators are used to combine two or more conditions. Assignment operators are to assign values to variables with less key strokes. JavaScript includes special operator called ternary operator :? that assigns a value to a variab",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 3,
@@ -80,9 +80,9 @@ module.exports = {
 
       {
         id: 8,
-        lessonTitle: "Array",
+        lessonTitle: "Module",
         lecture:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          "Module in Node.js is a simple or complex functionality organized in single or multiple JavaScript files which can be reused throughout the Node.js application. Each module in Node.js has its own context, so it cannot interfere with other modules or pollute global scope. Also, each module can be placed in a separate .js file under a separate folder. Node.js includes three types of modules: Core Modules, Local Modules, and Third Party Modules.",
         createdAt: new Date(),
         updatedAt: new Date(),
         CourseId: 4,
