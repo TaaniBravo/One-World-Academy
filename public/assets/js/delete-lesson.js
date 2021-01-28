@@ -1,20 +1,47 @@
 const lesson = $("#delete-button");
 const lessonId = lesson.attr("data-lesson");
 
-$(lesson).on("click", event => {
-  // Make sure to preventDefault on a submit event.
-  event.preventDefault();
+$(document).ready(() => {
+  $(".lessons").on("click", ".delete-button", async function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
 
-  // console.log(`Id: ${lessonId}`);
-  deleteLesson(lessonId);
+    const lesson = {
+      id: $(this).data("lesson")
+    };
+
+    const value = await swal("Please confirm you want to delete...", {
+      buttons: {
+        cancel: "Nevermind",
+        delete: "Begone!"
+      }
+    });
+
+    switch (value) {
+      case "cancel":
+        break;
+
+      case "delete":
+        swal("Gotcha", "Deleting...", "success");
+        setTimeout(() => {
+          deleteLesson(lesson);
+        }, 1500);
+
+        break;
+
+      default:
+        break;
+    }
+  });
 });
 
 // This function does an API call to delete posts
-function deleteLesson(id) {
-  $.ajax({
+const deleteLesson = async lesson => {
+  await $.ajax({
     method: "DELETE",
-    url: "/api/courses/" + id
-  }).then(() => {
-    window.location.replace("/user");
+    url: `/api/lessons/${lesson.id}`,
+    data: lesson
   });
-}
+
+  window.location.replace("/user");
+};
