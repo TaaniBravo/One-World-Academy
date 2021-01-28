@@ -68,25 +68,15 @@ module.exports = app => {
     }
   });
 
+  // Route for updating the user's information.
   app.put("/api/user_data", async (req, res) => {
     if (!req.user) {
       return;
     }
 
+    const updatedUser = {};
+
     const {
-      email,
-      firstName,
-      lastName,
-      twitterURL,
-      linkedinURL,
-      githubURL,
-      bio,
-      profilePic
-    } = req.body;
-
-    const password = bcrypt.hashSync(req.body.password, 10);
-
-    const updatedUser = {
       email,
       password,
       firstName,
@@ -96,42 +86,42 @@ module.exports = app => {
       githubURL,
       bio,
       profilePic
-    };
+    } = req.body;
 
-    if (email === "") {
-      delete updatedUser.email;
+    if (email !== "") {
+      updatedUser.email = email;
     }
 
-    if (password === "") {
-      delete updatedUser.password;
+    if (password !== "") {
+      updatedUser.password = bcrypt.hashSync(password, 10);
     }
 
-    if (firstName === "") {
-      delete updatedUser.firstName;
+    if (firstName !== "") {
+      updatedUser.firstName = firstName;
     }
 
-    if (lastName === "") {
-      delete updatedUser.lastName;
+    if (lastName !== "") {
+      updatedUser.lastName = lastName;
     }
 
-    if (twitterURL === "") {
-      delete updatedUser.twitterURL;
+    if (twitterURL !== "") {
+      updatedUser.twitterURL = twitterURL;
     }
 
-    if (linkedinURL === "") {
-      delete updatedUser.linkedinURL;
+    if (linkedinURL !== "") {
+      updatedUser.linkedinURL = linkedinURL;
     }
 
-    if (githubURL === "") {
-      delete updatedUser.githubURL;
+    if (githubURL !== "") {
+      updatedUser.githubURL = githubURL;
     }
 
-    if (bio === "") {
-      delete updatedUser.bio;
+    if (bio !== "") {
+      updatedUser.bio = bio;
     }
 
-    if (profilePic === "") {
-      delete updatedUser.profilePic;
+    if (profilePic !== "") {
+      updatedUser.profilePic = profilePic;
     }
 
     const updatedInfo = await db.User.update(updatedUser, {
