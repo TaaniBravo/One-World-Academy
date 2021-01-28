@@ -1,3 +1,4 @@
+// Creating the quiz questions model
 module.exports = function(sequelize, DataTypes) {
   const QuizQuestions = sequelize.define("QuizQuestions", {
     question: {
@@ -32,12 +33,14 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   QuizQuestions.associate = function(models) {
+    // A quiz has multiple questions
     QuizQuestions.belongsTo(models.Quiz, {
       foreignKey: {
         allowNull: false
       }
     });
 
+    // A user can create many questions
     QuizQuestions.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
