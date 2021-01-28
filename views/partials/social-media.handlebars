@@ -1,15 +1,15 @@
 {{#if user.twitterURL}}
-<li>
-    <a href="{{user.twitterURL}}"><i class="fab fa-twitter"></i></a>
+<li class="social">
+    <a href="{{user.twitterURL}}"><i class="fab fa-twitter"></i> Twitter</a>
 </li>
 {{/if}}
 {{#if user.linkedinURL}}
-<li>
-    <a href="{{user.linkedinURL}}"><i class="fab fa-linkedin"></i></a>
+<li class="social">
+    <a href="{{user.linkedinURL}}"><i class="fab fa-linkedin text-info"></i> Linked In</a>
 </li>
 {{/if}}
 {{#if user.githubURL}}
-<li>
-    <a href="{{user.githubURL}}"><i class="fab fa-github"></i></a>
+<li class="social">
+    <a href="{{user.githubURL}}"><i class="fab fa-github text-danger"></i> GitHub</a>
 </li>
 {{/if}}
