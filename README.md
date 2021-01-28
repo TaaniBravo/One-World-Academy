@@ -54,6 +54,7 @@ Users of One World Academy are able to:
 
 ## Credits
 
+### Technologies
 * [Heroku](https://www.heroku.com/)
 * [jQuery](https://jquery.com/)
 * [Node.js](https://nodejs.org/en/)
@@ -66,6 +67,10 @@ Users of One World Academy are able to:
 * [MySQL2](https://www.npmjs.com/package/mysql2)
 * [Font Awesome](https://fontawesome.com/)
 * [Bootstrap](https://getbootstrap.com/)
+
+### Images
+*[Vecteezy](https://www.vecteezy.com/)
+*[Adobe Stock](https://stock.adobe.com/)
 
 ## License
 
