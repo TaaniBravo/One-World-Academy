@@ -179,6 +179,9 @@ header {
 	margin-left: 5px;
 }
 
+.social {
+	list-style: none;
+}
 .team-img {
 	height: 100%;
 	width: auto;
