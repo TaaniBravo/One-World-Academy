@@ -3,11 +3,11 @@
     {{> nav-user}}
     <div class="container">
       <div class="flex-grid">
-        <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style" /></section>
-        <section class="hero-col">
+        <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style my-1" /></section>
+        <section class="hero-col card-style p-3 my-1">
           <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
-          <p><span class="fw-bold">Email: </span>{{user.email}}</p>
-          <p><span class="fw-bold">Bio: </span>{{user.bio}}</p>
+          <p><span class="fw-bold"><strong>Email:</strong> </span><a href="{{user.email}}"> {{user.email}} </a></p>
+          <p><span class="fw-bold"><strong>Bio:</strong> </span>{{user.bio}}</p>
           <ul class="social">{{> social-media}}</ul>
         </section>
       </div>
@@ -49,7 +49,7 @@
           <div class="container">
             <div class="row">
               <div class="col">
-                <h5 class="text-muted p-2 row"> {{lessonTitle}}</h5>
+                <a href="/courses/{{CourseId}}"><h5 class="text-muted p-2 row"> {{lessonTitle}}</h5></a>
               </div>
               <div class="col">
                 <a href="/update-lesson/{{id}}" class="btn btn-outline-info my-1"><i class="fas fa-pen-square"></i> Update Lesson</a>
@@ -64,4 +64,3 @@
 </div>
 
 <script src="./assets/js/userpage.js"></script>
-<script src="./assets/js/delete-lesson.js"></script>

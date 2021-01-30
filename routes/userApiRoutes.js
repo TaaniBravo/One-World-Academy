@@ -56,7 +56,7 @@ module.exports = app => {
   app.get("/api/user_data", async (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      res.json({});
+      res.status(404).json({});
     } else {
       // Otherwise send back the user's email and id
       const userData = await db.User.findOne({
@@ -64,7 +64,7 @@ module.exports = app => {
         attributes: { exclude: ["password"] }
       });
 
-      res.json(userData);
+      res.status(200).json(userData);
     }
   });
 
@@ -129,9 +129,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(updatedInfo);
+      res.status(200).json(updatedInfo);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 
@@ -141,7 +141,7 @@ module.exports = app => {
     });
 
     try {
-      res.json(deleteUser);
+      res.status(200).json(deleteUser);
     } catch (error) {
       res.status(401).json(error);
     }
