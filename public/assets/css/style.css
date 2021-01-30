@@ -187,6 +187,11 @@ header {
 	width: auto;
 }
 
+.lead-styling {
+	border-top: 1px dashed #e7e7e7;
+	padding-top: 10px;
+}
+
 .footer-section {
 	background-color: #020310;
 	padding-top: 20px;
