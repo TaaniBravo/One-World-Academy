@@ -10,7 +10,7 @@ module.exports = app => {
     try {
       res.json(courses);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(404).json(error);
     }
   });
 
@@ -23,7 +23,7 @@ module.exports = app => {
     });
 
     try {
-      res.json(course);
+      res.status(200).json(course);
     } catch (error) {
       res.status(404).json(error);
     }
@@ -47,9 +47,9 @@ module.exports = app => {
     });
 
     try {
-      res.send(newCourse);
+      res.status(201).send(newCourse);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 
@@ -73,9 +73,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(updatedCourse);
+      res.status(200).json(updatedCourse);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 
@@ -86,9 +86,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(deleteCourse);
+      res.status(200).json(deleteCourse);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 };

@@ -75,5 +75,5 @@ const deleteProfile = async () => {
     url: "/api/user_data"
   });
 
-  window.location.replace("/");
+  window.location.replace("/logout");
 };

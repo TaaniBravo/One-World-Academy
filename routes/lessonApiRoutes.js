@@ -8,9 +8,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(lessons);
+      res.status(200).json(lessons);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(404).json(error);
     }
   });
 
@@ -21,9 +21,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(lessons);
+      res.status(200).json(lessons);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(404).json(error);
     }
   });
 
@@ -38,9 +38,9 @@ module.exports = app => {
     });
 
     try {
-      res.send(newLesson);
+      res.status(201).send(newLesson);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 
@@ -57,9 +57,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(updatedLesson);
+      res.status(200).json(updatedLesson);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 
@@ -70,9 +70,9 @@ module.exports = app => {
     });
 
     try {
-      res.json(deleteLesson);
+      res.status(200).json(deleteLesson);
     } catch (error) {
-      res.status(401).json(error);
+      res.status(400).json(error);
     }
   });
 };
