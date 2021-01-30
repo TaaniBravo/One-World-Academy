@@ -12,7 +12,7 @@ $(document).ready(() => {
     deleteCourse(course);
   });
 
-  $(".lessons").on("click", ".delete-button", function(event) {
+  $(".delete-button").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
