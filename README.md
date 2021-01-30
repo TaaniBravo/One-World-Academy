@@ -28,6 +28,12 @@ No installation required for end-user; users can create an account on One World 
 ### Deployed application
 [One World Academy](https://oneworldacademy.herokuapp.com/)
 
+### Gif
+![User flow](https://media.giphy.com/media/OcSTNwh58uYSfVQKPD/giphy.gif)
+
+### Homepage
+![One World Academy homepage](https://user-images.githubusercontent.com/71162422/106347116-d6879100-6270-11eb-8a6f-73d4b3dda184.png)
+
 ### User experience
 Users of One World Academy are able to:
 * Create a new account and sign up, if a new user, using their first name, last name, email, password, as well as their accounts for Twitter, LinkedIn, and GitHub
