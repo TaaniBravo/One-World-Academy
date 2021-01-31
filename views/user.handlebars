@@ -1,8 +1,11 @@
+{{!-- This is the header section of the User Profiel Page --}}
 <header class="header">
   <div class="container header-bg">
+    {{!-- We call on the user navigation partial --}}
     {{> nav-user}}
     <div class="container">
       <div class="flex-grid">
+        {{!-- We populate all of the requsite informaiton regarding the signed in user --}}
         <section class="hero-col"><img src="{{user.profilePic}}" class="col-12 col-sm-6 card-style my-1" /></section>
         <section class="hero-col card-style p-3 my-1">
           <h3 class="h1-hero">{{user.firstName}} {{user.lastName}}</h3>
@@ -14,7 +17,7 @@
     </div>
   </div>
 </header>
-
+{{!-- This is the user options section --}}
 <div class="welcome py-3">
   <div class="container">
     <div class="row text-muted">
@@ -27,23 +30,25 @@
       <button class="btn btn-danger col-12 col-sm-2 btn-block m-1" id="delete-user-btn"><i class="fas fa-trash"></i> Delete Account</button>
     </div>
   </div>
-
+{{!-- This is the user courses section --}}
 <div class="welcome py-3">
   <div class="container">
     <div class="row text-muted">
       <h2>User Courses:</h2>
     </div>
     <div class="row px-3">
+      {{!-- We populate all of the courses that user has created --}}
       {{> course-tile}}
     </div>
   </div>
-
+{{!-- This is the user lessons section --}}
   <div class="container text-center py-3">
     <div class="row text-muted">
       <h2>User Lessons:</h2>
     </div>
     <div class="column card-style">
       <ul class="list-group">
+        {{!-- We populate all of the lessons associated with the courses that the user has made --}}
         {{#each lesson}}
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <div class="container">

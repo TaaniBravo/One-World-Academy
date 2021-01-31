@@ -18,16 +18,17 @@ h4::before {
 	color: white;
 }
 
+/* Height reset */
 html,
 body {
 	height: 100%;
 }
-
+/* Making the entire body section responsive */
 body {
 	display: flex;
 	flex-direction: column;
 }
-
+/* The header section */
 header {
 	background-color: white;
 	background-image: url("../images/bg2.png");
@@ -37,7 +38,7 @@ header {
 #page-content {
 	flex: 1 0 auto;
 }
-
+/* Hero section and logo styling */
 .logo-alt {
 	width: auto;
 	height: 52px;
@@ -131,7 +132,7 @@ header {
 	box-shadow: 0 3.42857px 23px rgba(0, 0, 0, 0.1);
 	position: relative;
 }
-
+/* Lesson Cards Styling */
 .lesson-header {
 	border-bottom: 1px dashed #a7cf02;
 	margin-bottom: 20px;
@@ -142,7 +143,7 @@ header {
 	padding: 10px;
 	border-radius: 10px;
 }
-
+/* Welcome Seciton Syling */
 .welcome-main {
 	border-top: 1px solid #e7e7e7;
 	border-bottom: 1px solid #e7e7e7;
@@ -150,7 +151,7 @@ header {
 	color: #0c0f32;
 	padding-top: 20px;
 }
-/* --------- Team Section */
+/* Team Section Styling*/
 .welcome {
 	border-top: 1px solid #e7e7e7;
 	border-bottom: 1px solid #e7e7e7;
@@ -165,6 +166,7 @@ header {
 	background-image: url("../images/bg2.png");
 	background-repeat: space;
 }
+/* User Page Styling */
 .profile-pic {
 	color: white;
 	border-radius: 5px;
@@ -182,17 +184,18 @@ header {
 .social {
 	list-style: none;
 }
+/* Team Image */
 .team-img {
 	height: 100%;
 	width: auto;
 }
-
+/* Lead Syling */
 .lead-styling {
 	border-top: 1px dashed #e7e7e7;
 	border-bottom: 1px dashed #e7e7e7;
 	padding-top: 10px;
 }
-
+/* Footer Styling */
 .footer-section {
 	background-color: #020310;
 	padding-top: 20px;

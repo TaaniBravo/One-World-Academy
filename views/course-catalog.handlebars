@@ -1,5 +1,7 @@
+{{!-- This is the header section for our Course Catalog --}}
 <header class="header">
     <div class="container header-bg">
+      {{!-- Here we've added our Navigation partial --}}
         {{> nav}}
         <div class="container">
         <div class="flex-grid">
@@ -13,12 +15,13 @@
       </div>
     </div>
 </header>
-
+{{!-- This is the All Courses Section of our Handlebar --}}
   <div class="welcome">
     <div class="container text-center py-3">
       <h5 class="h5-hero-2">All Courses</h5>
       <div class="container">
         <div class="row">
+          {{!-- We call on the course-tile-public handlebar partial to get the data for all the courses --}}
           {{> course-tile-public}}
         </div>
         </div>
