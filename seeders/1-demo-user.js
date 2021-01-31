@@ -12,8 +12,8 @@ const hash2 = bcrypt.hashSync(passwrod2, 10);
 const passwrod3 = "loss";
 const hash3 = bcrypt.hashSync(passwrod3, 10);
 
-// Insert some sammples of user account
 module.exports = {
+  // Insert some sammples of user account
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Users", [
       {
