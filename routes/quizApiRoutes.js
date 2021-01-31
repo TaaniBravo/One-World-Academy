@@ -1,10 +1,12 @@
+// TODO... implement quizzes into the site. All back-end routing is essentially done (though not tested). Although currently there is no plan to flesh this idea out.
+
 const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const passport = require("passport");
 require("../config/passport");
 
 module.exports = app => {
-  // Routes for the quizzes themselves.
+  // GET Routes for the quizzes themselves.
   app.get("/api/quizzes", isAuthenticated, async (req, res) => {
     const quizzes = await db.Quiz.findAll({
       raw: true,
@@ -20,6 +22,7 @@ module.exports = app => {
     }
   });
 
+  // POST Route for creating a quiz.
   app.post("/api/quizzes", async (req, res) => {
     const { quizTitle, lessonId } = req.body;
     const newQuiz = await db.Quiz.create({
@@ -35,7 +38,7 @@ module.exports = app => {
     }
   });
 
-  // Routes for the questions.
+  // GET Route for the questions.
   app.get("/api/questions", isAuthenticated, async (req, res) => {
     const questions = await db.Quiz.findAll({
       raw: true,
@@ -51,6 +54,7 @@ module.exports = app => {
     }
   });
 
+  // POST Route for creating questions.
   app.post("/api/questions", async (req, res) => {
     const {
       question,

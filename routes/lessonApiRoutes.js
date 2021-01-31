@@ -7,22 +7,27 @@ module.exports = app => {
       where: { UserId: req.user.id }
     });
 
+    // TRY giving a response JSON of the lesson data pulled.
     try {
       res.status(200).json(lessons);
     } catch (error) {
+      // CATCH the error applying it to JSON and give status code of 404.
       res.status(404).json(error);
     }
   });
 
+  // GET Route for viewing a single lesson.
   app.get("/api/lessons/:id", async (req, res) => {
     const { id } = req.params;
     const lessons = await db.Lesson.findOne({
       where: { id }
     });
 
+    // TRY giving a response JSON of the lesson data pulled.
     try {
       res.status(200).json(lessons);
     } catch (error) {
+      // CATCH the error applying it to JSON and give status code of 404.
       res.status(404).json(error);
     }
   });
@@ -37,9 +42,11 @@ module.exports = app => {
       UserId: req.user.id
     });
 
+    // TRY giving a response JSON of the lesson data created.
     try {
       res.status(201).send(newLesson);
     } catch (error) {
+      // CATCH the error applying it to JSON and give status code of 404.
       res.status(400).json(error);
     }
   });
@@ -56,9 +63,11 @@ module.exports = app => {
       where: { id }
     });
 
+    // TRY giving a response JSON of the lesson data updated.
     try {
       res.status(200).json(updatedLesson);
     } catch (error) {
+      // CATCH the error applying it to JSON and give status code of 404.
       res.status(400).json(error);
     }
   });
@@ -69,9 +78,11 @@ module.exports = app => {
       where: { id: req.body.id }
     });
 
+    // TRY giving a response JSON of the lesson data deleted.
     try {
       res.status(200).json(deleteLesson);
     } catch (error) {
+      // CATCH the error applying it to JSON and give status code of 404.
       res.status(400).json(error);
     }
   });

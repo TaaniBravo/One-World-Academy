@@ -1,4 +1,4 @@
-// Requiring our middleware for checking if a user is logged in or not.
+// Requiring our middleware for checking if a user is logged in or not. Then requiring our models as db so we can call upon them.
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
 
@@ -33,7 +33,8 @@ module.exports = app => {
     res.render("sign-up");
   });
 
-  //   IF a user who's not logged in tries to access any of these routes they will be rendered to the signup page.
+  //   IF a user who's not logged in tries to access any of these routes under this comment they will be rendered to the sign-up page.
+
   // Route for the user's profile.
   app.get("/user", isAuthenticated, async (req, res) => {
     const userData = await db.User.findOne({
