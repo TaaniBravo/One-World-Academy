@@ -44,6 +44,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
+    // Social media url can be null
     twitterURL: {
       type: DataTypes.STRING,
       allowNull: true,
