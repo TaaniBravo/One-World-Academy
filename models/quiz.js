@@ -1,4 +1,4 @@
-// Creating the quiz model
+// Creating the quiz model, to be used in future development
 module.exports = function(sequelize, DataTypes) {
   const Quiz = sequelize.define("Quiz", {
     quizTitle: {
