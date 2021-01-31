@@ -1,5 +1,6 @@
 "use strict";
 
+// Insert the samples of quiz questions to database
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("QuizQuestions", [

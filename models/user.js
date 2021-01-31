@@ -73,22 +73,27 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
+    // A user can create many courses
     User.hasMany(models.Course, {
       onDelete: "cascade"
     });
 
+    // A user can create many lessons
     User.hasMany(models.Lesson, {
       onDelete: "cascade"
     });
 
+    // A user can create many quiz questions
     User.hasMany(models.QuizQuestions, {
       onDelete: "cascade"
     });
 
+    // A user can create many quizzes
     User.hasMany(models.Quiz, {
       onDelete: "cascade"
     });
 
+    // A quiz can be accessed by many users
     User.belongsToMany(models.Quiz, {
       through: models.UserScores
     });

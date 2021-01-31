@@ -1,5 +1,6 @@
 "use strict";
 
+// Insert the conurse types to database as category
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Categories", [

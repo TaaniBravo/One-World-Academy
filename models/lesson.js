@@ -25,6 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 
+    // A user can create many lessons
     Lesson.belongsTo(models.User, {
       foreignKey: {
         allowNull: false

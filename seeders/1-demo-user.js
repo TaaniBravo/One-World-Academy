@@ -1,5 +1,6 @@
 "use strict";
 
+// Use bcrypt to hash the password before inserting to database
 const bcrypt = require("bcryptjs");
 
 const password1 = "john";
@@ -11,6 +12,7 @@ const hash2 = bcrypt.hashSync(passwrod2, 10);
 const passwrod3 = "loss";
 const hash3 = bcrypt.hashSync(passwrod3, 10);
 
+// Insert some sammples of user account
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Users", [
