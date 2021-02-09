@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
-
+const compression = require("compression");
 const passport = require("passport");
 require("./config/passport");
 
@@ -17,6 +17,8 @@ app.use(express.static("public"));
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
+
+app.use(compression());
 
 app.use(
   session({
